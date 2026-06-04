@@ -1,0 +1,6 @@
+{
+  "name": "Velo Flow",
+  "description": "Plataforma inovadora de mobilidade urbana inteligente com tag de pedágio que dispensa paradas. Evite filas e conecte seu veículo com cobertura nacional em pedágios e estacionamentos de todo o Brasil.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
