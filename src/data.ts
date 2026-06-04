@@ -4,37 +4,40 @@ export const PLANS: Plan[] = [
   {
     id: "basic",
     name: "Plano Básico",
-    price: "99,90",
-    period: "/ano",
+    price: "19,99",
+    period: "/mês",
     highlight: false,
-    tagline: "Perfeito para viagens ocasionais",
+    tagline: "30 Dias Grátis – Praticidade para o seu dia a dia",
     features: [
-      "Livre de mensalidades fixas",
-      "Aceito em 90% de pedágios no Brasil",
-      "10% de desconto no 2º ano de uso",
-      "Relatório mensal de despesas via app",
-      "Suporte exclusivo via WhatsApp"
+      "Mensalidade ZERO no 1º mês (30 dias grátis)",
+      "Taxa de Envio da Tag 100% Grátis",
+      "Adesão Inicial Grátis",
+      "Cancelamento a qualquer momento (Sem Multa)",
+      "Pague apenas o que rodar/usar em pedágios",
+      "Cobertura nacional em todos os pedágios",
+      "Controle total de gastos pelo WhatsApp"
     ],
-    ctaText: "Escolher Plano Básico",
-    whatsappMessage: "Olá! Gostaria de assinar o Plano Básico da Velo Flow (R$ 99,90/ano)."
+    ctaText: "Pedir Básico – Grátis 30 Dias",
+    whatsappMessage: "Olá! Gostaria de assinar o Plano Básico da Velo Flow (R$ 19,99/mês com 30 Dias Grátis e Frete Grátis)."
   },
   {
     id: "premium",
     name: "Plano Premium",
-    price: "149,90",
-    period: "/ano",
+    price: "49,99",
+    period: "/mês",
     highlight: true,
-    tagline: "Nosso plano campeão de vendas",
+    tagline: "Nosso plano mais completo com suporte VIP",
     features: [
-      "Mensalidade ZERO no 1º mês",
-      "Pedágios + Estacionamentos Integrados",
-      "Mais de 1.250 pontos com cobertura oficial",
-      "Upgrade gratuito para 2º carro/moto",
-      "Suporte Premium prioritário 24h",
-      "Tag física grátis enviada em até 5 dias"
+      "Mensalidade ZERO no 1º mês (30 dias grátis)",
+      "Envio Expresso Prioritário 100% Grátis",
+      "Adesão Inicial Grátis",
+      "Cancelamento a qualquer momento (Sem Multa)",
+      "Pague apenas o que rodar/usar em pedágios",
+      "Passagem livre em pedágios, shoppings e aeroportos",
+      "Atendimento prioritário de suporte humanizado 24h"
     ],
-    ctaText: "Escolher Plano Premium",
-    whatsappMessage: "Olá! Gostaria de assinar o Plano Premium da Velo Flow (R$ 149,90/ano). Quero meus 30 dias grátis de teste."
+    ctaText: "Pedir Premium – Grátis 30 Dias",
+    whatsappMessage: "Olá! Gostaria de assinar o Plano Premium da Velo Flow (R$ 49,99/mês com 30 Dias Grátis e Frete Grátis)."
   },
   {
     id: "corp",
@@ -42,17 +45,17 @@ export const PLANS: Plan[] = [
     price: "Sob Consulta",
     period: "",
     highlight: false,
-    tagline: "Gestão inteligente de frotas",
+    tagline: "Gestão inteligente para frotas de empresas",
     features: [
+      "30 Dias de Isenção para testar toda a frota",
+      "Envio de todas as tags 100% Grátis",
+      "Adesão Inicial Grátis",
       "Faturamento unificado quinzenal ou mensal",
-      "Crédito ilimitado por veículo cadastrado",
-      "Plataforma completa de gestão Web",
-      "Dashboard com métricas e exportação XLS/PDF",
-      "Gerente de contas exclusivo",
-      "Descontos progressivos a partir de 5 tags"
+      "Plataforma completa de gestão Web e relatórios customizados",
+      "Sem carência – cancele quando desejar livre de multas"
     ],
-    ctaText: "Solicitar Orçamento",
-    whatsappMessage: "Olá! Gostaria de falar com um especialista sobre frotas no Plano Corporativo da Velo Flow."
+    ctaText: "Falar com Consultor",
+    whatsappMessage: "Olá! Gostaria de falar com um especialista sobre frotas no Plano Corporativo da Velo Flow com teste grátis."
   }
 ];
 
@@ -86,23 +89,23 @@ export const TESTIMONIALS: Testimonial[] = [
 export const FAQS: FAQItem[] = [
   {
     question: "Como funciona a tag inteligente da Velo Flow?",
-    answer: "A Velo Flow é uma tag colada no para-brisa do seu veículo. Ela utiliza radiofrequência (RFID) homologada para enviar sinais para as antenas das cabines de pedágio e estacionamentos parceiros. A cancela abre automaticamente, eliminando suas paradas e filas."
+    answer: "A Velo Flow é um adesivo inteligente com chip RFID que você cola no para-brisa do seu veículo. Ao passar pelas cabines de pedágios automáticos em rodovias ou cancelas de shoppings e estacionamentos parceiros, a antena lê a tag e libera a passagem automaticamente, debitando apenas a tarifa oficial."
   },
   {
-    question: "Aceita em todos os pedágios e estacionamentos?",
-    answer: "Nossa cobertura atinge mais de 90% dos pedágios de rodovias estaduais e federais concessionadas de todo o Brasil, além de mais de 1.200 shoppings, aeroportos, hotéis, e estacionamentos privados das principais capitais brasileiras."
+    question: "O envio da Tag física para minha casa é realmente grátis?",
+    answer: "Sim! O envio da tag física adesiva para seu endereço residencial ou empresarial é 100% gratuito. Não cobramos frete, taxa operacional de postagem ou taxas de ativação para enviar e disponibilizar o adesivo para você."
   },
   {
-    question: "Como funciona o período de testes de 30 dias grátis?",
-    answer: "Ao assinar o Plano Premium, o primeiro mês de taxas de serviço de adesão do veículo é totalmente isento (R$ 0). Você pode desfrutar de toda a comodidade da tag sem riscos. Caso queira cancelar, é só nos chamar no WhatsApp."
+    question: "Como funciona os 30 dias grátis de teste do serviço (Adesão de Isenção)?",
+    answer: "Todos os nossos planos (Básico e Premium) vêm com os primeiros 30 dias de mensalidade totalmente grátis. Você não paga nenhuma mensalidade do serviço ou taxa operacional no primeiro mês. Caso decida continuar utilizando a facilidade após os 30 dias de teste, a mensalidade regular correspondente do plano será cobrada para manter os serviços ativos."
   },
   {
-    question: "Posso cancelar ou trocar de veículo a qualquer momento?",
-    answer: "Sim! Não temos fidelidades engessadas para usuários individuais. O cancelamento pode ser feito 100% online através de nosso WhatsApp de atendimento de forma bem tranquila. Caso compre um carro novo, você pode transferir a cobertura de forma rápida via app."
+    question: "Como funciona o cancelamento? Pago alguma taxa ou multa?",
+    answer: "O cancelamento é 100% livre, desburocratizado e sem custos ocultos. Você pode solicitar a desativação da tag a qualquer momento pelo suporte via WhatsApp (42) 99920-2204 ou e-mail contato.veloflow@gmail.com. Não há multas de fidelidade, taxas contratuais ou termos de carência mínima. Você paga apenas o saldo ou tarifas de pedágios que efetivamente utilizou em suas passagens pelas estradas e nada mais."
   },
   {
-    question: "Como são feitas as recargas e o pagamento?",
-    answer: "Oferecemos modalidades pré-paga inteligente (com recarga automática por PIX ou cartão de crédito quando seu saldo atinge um valor mínimo personalizável) e pós-paga via faturamento empresarial. Tudo controlado pelo celular de forma instantânea de onde estiver."
+    question: "Quais são as formas de pagamento e recarga aceitas?",
+    answer: "Disponibilizamos métodos práticos de recarga pré-paga inteligente por PIX e Cartão de Crédito (onde você define um saldo e ele se renova automaticamente de forma prática quando atinge um valor mínimo controlado por você), e a modalidade pós-paga via faturamento para contas corporativas."
   }
 ];
 

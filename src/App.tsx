@@ -27,24 +27,28 @@ import { motion, AnimatePresence } from "motion/react";
 
 import { SiteConfig } from "./types";
 import { PLANS, TESTIMONIALS, FAQS, COVERAGE_REGIONS } from "./data";
-import CustomizerPanel from "./components/CustomizerPanel";
 import SavingsCalculator from "./components/SavingsCalculator";
-import InteractiveChat from "./components/InteractiveChat";
 
 export default function App() {
-  // Config state initialized with default Velo Flow details
+  // Config state initialized with default VANDERLEY ANTONIO DA SILVA / SEU TRANSPORTE details
   const [siteConfig, setSiteConfig] = useState<SiteConfig>({
-    companyName: "Velo Flow Tecnologia Ltda",
-    cnpj: "33.654.987/0001-23",
-    address: "Rua dos Cariris, 752, Sala 12, Tatuapé, São Paulo - SP, 03310-030",
-    email: "contato@veloflow.com.br",
-    phoneDisplay: "(11) 99999-8888",
-    whatsAppNumber: "5511999998888"
+    companyName: "VANDERLEY ANTONIO DA SILVA",
+    cnpj: "06.912.488/0001-00",
+    address: "R MANOEL ANTONIO DE LIMA, 755 - CHACARA SAO DOMINGOS SHOP, MOCOCA - SP, CEP 13.734-445",
+    email: "contato.veloflow@gmail.com",
+    phoneDisplay: "(42) 99920-2204",
+    whatsAppNumber: "5542999202204"
   });
 
   const [activeCoverageIndex, setActiveCoverageIndex] = useState(0);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  // Google Ads compliance modal states
+  const [isTermsModalOpen, setIsTermsModalOpen] = useState(false);
+  const [isPrivacyModalOpen, setIsPrivacyModalOpen] = useState(false);
+  const [isSecurityModalOpen, setIsSecurityModalOpen] = useState(false);
+  const [isCancellationModalOpen, setIsCancellationModalOpen] = useState(false);
   
   // Interactive coverage modal or custom address search Simulator
   const [coverageSearch, setCoverageSearch] = useState("");
@@ -77,60 +81,57 @@ export default function App() {
   const defaultHeroCta = "Olá! Gostaria de falar com um especialista sobre a adesão da Tag Inteligente Velo Flow.";
 
   return (
-    <div className="bg-white min-h-screen text-brand-dark flex flex-col relative overflow-x-hidden font-sans">
-      {/* Dynamic Floating Live Config Panel */}
-      <CustomizerPanel config={siteConfig} onChange={setSiteConfig} />
+    <div className="bg-brand-slate min-h-screen text-brand-dark flex flex-col relative overflow-x-hidden font-sans">
 
       {/* Top Banner Offer */}
-      <div className="bg-[#002244] text-white py-2 px-4 text-center text-xs tracking-wide font-medium relative z-40">
-        <span className="bg-brand-orange text-white text-[10px] font-extrabold px-2 py-0.5 rounded mr-2 animate-pulse">
-          OFERTA DE LANÇAMENTO
+      <div className="bg-brand-dark text-white py-2.5 px-4 text-center text-xs tracking-wide font-medium relative z-40 border-b border-white/5">
+        <span className="bg-brand-pink text-white text-[9px] font-extrabold px-2 py-0.5 rounded mr-2 animate-pulse uppercase tracking-wider">
+          Adesão Grátis
         </span>
-        Primeiro mês com taxa zero de adesão! Teste 30 dias grátis.{" "}
+        Primeiro mês com mensalidade zero! Peça sua tag pelo WhatsApp.{" "}
         <a 
           id="banner-whatsapp-link"
           href={getWhatsappLink("Olá! Gostaria de garantir a isenção de taxa e testar por 30 dias grátis.")}
           target="_blank"
           rel="noopener noreferrer"
-          className="underline font-bold hover:text-brand-orange transition-colors shrink-0 inline-block ml-1"
+          className="underline font-extrabold text-brand-orange hover:text-white transition-colors shrink-0 inline-block ml-1"
         >
-          Resgatar Cupom →
+          Resgatar Grátis →
         </a>
       </div>
 
       {/* Header */}
-      <header className="sticky top-0 bg-white/95 backdrop-blur-md border-b border-gray-100 z-30 transition-all shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+      <header className="sticky top-0 bg-brand-blue/95 backdrop-blur-md border-b border-white/10 z-30 transition-all shadow-lg text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4.5 flex items-center justify-between">
           
           {/* Logo Concept: Stylized circle V check arrow */}
           <a href="#" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 bg-brand-blue rounded-full flex items-center justify-center shadow-md shadow-brand-blue/10 group-hover:scale-105 transition-transform">
-              {/* Custom SVG logo representing Circle "V" with movement direction */}
-              <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" className="w-5 h-5 text-white">
+            <div className="w-10 h-10 bg-brand-orange rounded-full flex items-center justify-center shadow-lg shadow-brand-orange/20 group-hover:scale-105 transition-transform">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#1c003d" strokeWidth="3.5" className="w-5 h-5">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
               </svg>
             </div>
             <div>
               <div className="flex items-baseline leading-none">
-                <span className="font-display font-black text-xl text-brand-blue tracking-tight">VELO</span>
-                <span className="font-display font-black text-xl text-brand-orange tracking-tight">FLOW</span>
+                <span className="font-display font-black text-2xl text-white tracking-tight">VELO</span>
+                <span className="font-display font-black text-2xl text-brand-orange tracking-tight">FLOW</span>
               </div>
-              <p className="text-[9px] text-gray-400 font-display font-bold uppercase tracking-widest mt-0.5">
-                Mobilidade Urbana
+              <p className="text-[9px] text-brand-orange/80 font-display font-bold uppercase tracking-widest mt-0.5">
+                SEU TRANSPORTE
               </p>
             </div>
           </a>
 
           {/* Nav for Desktop */}
-          <nav className="hidden md:flex items-center gap-8 text-sm font-semibold text-gray-600">
-            <a href="#como-funciona" className="hover:text-brand-blue transition-colors">Como Funciona</a>
-            <a href="#calculadora" className="hover:text-brand-blue transition-colors flex items-center gap-1">
+          <nav className="hidden md:flex items-center gap-8 text-xs sm:text-sm font-bold text-white/90">
+            <a href="#como-funciona" className="hover:text-brand-orange transition-colors">Como Funciona</a>
+            <a href="#calculadora" className="hover:text-brand-orange transition-colors flex items-center gap-1.5">
               <span>Simulador</span>
-              <span className="text-[9px] bg-brand-orange/10 text-brand-orange px-1.5 py-0.5 rounded font-extrabold uppercase">Novo</span>
+              <span className="text-[9px] bg-brand-pink text-white px-2 py-0.5 rounded-full font-extrabold uppercase tracking-wide">Economia</span>
             </a>
-            <a href="#planos" className="hover:text-brand-blue transition-colors">Planos</a>
-            <a href="#cobertura" className="hover:text-brand-blue transition-colors">Cobertura</a>
-            <a href="#faq" className="hover:text-brand-blue transition-colors">Dúvidas</a>
+            <a href="#planos" className="hover:text-brand-orange transition-colors">Planos</a>
+            <a href="#cobertura" className="hover:text-brand-orange transition-colors">Cobertura</a>
+            <a href="#faq" className="hover:text-brand-orange transition-colors">Dúvidas</a>
           </nav>
 
           {/* Top CTA */}
@@ -140,7 +141,7 @@ export default function App() {
               href={getWhatsappLink("Olá! Gostaria de acessar a minha conta e solicitar segunda via de boleto/fatura.")}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-brand-blue hover:text-brand-orange font-bold text-sm transition-colors px-3 py-2 border border-brand-blue/20 rounded-lg hover:border-brand-orange/30"
+              className="text-white hover:text-brand-orange font-bold text-sm transition-colors px-3 py-2 border border-white/20 rounded-xl hover:border-brand-orange/50"
             >
               Área do Cliente
             </a>
@@ -149,10 +150,10 @@ export default function App() {
               href={getWhatsappLink(defaultHeroCta)}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-brand-orange hover:bg-opacity-90 text-white font-display font-bold text-sm px-4 py-2.5 rounded-lg transition-all shadow-md shadow-brand-orange/10 flex items-center gap-2"
+              className="bg-brand-orange hover:bg-brand-orange/90 text-brand-blue font-display font-black text-sm px-5 py-2.5 rounded-xl transition-all shadow-md shadow-brand-orange/10 flex items-center gap-2"
             >
-              <span>Suporte Oficial</span>
-              <Phone className="w-3.5 h-3.5 fill-white" />
+              <span>Pedir Tag Grátis</span>
+              <Phone className="w-4 h-4 text-brand-blue fill-brand-blue" />
             </a>
           </div>
 
@@ -160,7 +161,7 @@ export default function App() {
           <button
             id="mobile-menu-toggle-btn"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 rounded-lg text-gray-600 hover:text-brand-blue hover:bg-gray-100 transition-colors cursor-pointer"
+            className="md:hidden p-2 rounded-lg text-white hover:text-brand-orange transition-colors cursor-pointer"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -174,53 +175,53 @@ export default function App() {
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
-              className="md:hidden border-t border-gray-100 bg-white overflow-hidden"
+              className="md:hidden border-t border-white/10 bg-brand-blue overflow-hidden"
             >
-              <div className="px-4 py-4 space-y-3 flex flex-col font-medium text-gray-700">
+              <div className="px-4 py-5 space-y-3.5 flex flex-col font-bold text-white/95">
                 <a 
                   href="#como-funciona" 
                   onClick={() => setMobileMenuOpen(false)}
-                  className="py-2 hover:text-brand-blue transition-colors border-b border-gray-50 text-sm"
+                  className="py-2 hover:text-brand-orange transition-colors border-b border-white/5 text-sm"
                 >
                   Como Funciona
                 </a>
                 <a 
                   href="#calculadora" 
                   onClick={() => setMobileMenuOpen(false)}
-                  className="py-2 hover:text-brand-blue transition-colors border-b border-gray-50 flex items-center justify-between text-sm"
+                  className="py-2 hover:text-brand-orange transition-colors border-b border-white/5 flex items-center justify-between text-sm"
                 >
                   <span>Simulador de Custos</span>
-                  <span className="text-[9px] bg-brand-orange text-white px-1.5 py-0.5 rounded font-extrabold uppercase">CALCULAR</span>
+                  <span className="text-[9px] bg-brand-pink text-white px-2.5 py-1 rounded font-extrabold uppercase">Calcular</span>
                 </a>
                 <a 
                   href="#planos" 
                   onClick={() => setMobileMenuOpen(false)}
-                  className="py-2 hover:text-brand-blue transition-colors border-b border-gray-50 text-sm"
+                  className="py-2 hover:text-brand-orange transition-colors border-b border-white/5 text-sm"
                 >
                   Planos e Preços
                 </a>
                 <a 
                   href="#cobertura" 
                   onClick={() => setMobileMenuOpen(false)}
-                  className="py-2 hover:text-brand-blue transition-colors border-b border-gray-50 text-sm"
+                  className="py-2 hover:text-brand-orange transition-colors border-b border-white/5 text-sm"
                 >
                   Cobertura Oficial
                 </a>
                 <a 
                   href="#faq" 
                   onClick={() => setMobileMenuOpen(false)}
-                  className="py-2 hover:text-brand-blue transition-colors border-b border-gray-50 text-sm"
+                  className="py-2 hover:text-brand-orange transition-colors border-b border-white/5 text-sm"
                 >
                   Perguntas Frequentes
                 </a>
                 
-                <div className="flex gap-2 pt-2">
+                <div className="flex gap-2 pt-3">
                   <a
                     id="mobile-menu-client-login"
-                    href={getWhatsappLink("Olá! Gostaria de acessar a minha Área do Cliente da Velo Flow.")}
+                    href={getWhatsappLink("Olá! Gostaria de acessar a minha Área do Cliente.")}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 text-center py-2.5 rounded-xl border border-gray-200 text-xs font-bold text-gray-600 hover:bg-gray-50"
+                    className="flex-1 text-center py-3 rounded-xl border border-white/20 text-xs font-bold text-white hover:bg-white/5"
                   >
                     Login Cliente
                   </a>
@@ -229,9 +230,9 @@ export default function App() {
                     href={getWhatsappLink(defaultHeroCta)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 text-center py-2.5 rounded-xl bg-brand-orange text-white text-xs font-bold hover:bg-opacity-95 shadow-md shadow-brand-orange/10"
+                    className="flex-1 text-center py-3 rounded-xl bg-brand-orange text-brand-blue text-xs font-black hover:bg-brand-orange/95 shadow-md shadow-brand-orange/10"
                   >
-                    Atendimento WhasApp
+                    WhatsApp Vendas
                   </a>
                 </div>
               </div>
@@ -275,27 +276,34 @@ export default function App() {
                 </p>
 
                 {/* Main Action Nodes */}
-                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
-                  <motion.a
-                    id="hero-primary-whats-cta"
-                    href={getWhatsappLink(defaultHeroCta)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full sm:w-auto bg-brand-orange hover:bg-opacity-95 text-white font-display font-black text-base px-8 py-4 rounded-xl shadow-xl shadow-brand-orange/20 flex items-center justify-center gap-3 cursor-pointer"
-                    whileHover={{ y: -3 }}
-                    whileTap={{ y: 0 }}
-                  >
-                    <MessageSquare className="w-5 h-5 fill-white" />
-                    <span>Falar com Especialista no WhatsApp</span>
-                  </motion.a>
+                <div className="flex flex-col gap-2.5">
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
+                    <motion.a
+                      id="hero-primary-whats-cta"
+                      href={getWhatsappLink(defaultHeroCta)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full sm:w-auto bg-brand-orange hover:bg-brand-orange/90 text-brand-blue font-display font-black text-base px-8 py-4 rounded-xl shadow-xl shadow-brand-orange/20 flex items-center justify-center gap-3 cursor-pointer"
+                      whileHover={{ y: -3 }}
+                      whileTap={{ y: 0 }}
+                    >
+                      <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-brand-blue">
+                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.261 2.266 3.501 5.28 3.5 8.487-.018 6.657-5.357 11.996-11.967 11.996-2.005-.001-3.973-.504-5.713-1.463L0 24zm6.59-4.846c1.6.95 3.16 1.449 4.884 1.45 5.515 0 10.002-4.49 10.014-10.024.006-2.68-1.038-5.2-2.932-7.099s-4.42-2.936-7.103-2.936c-5.524 0-10.014 4.49-10.026 10.025-.002 1.83.475 3.619 1.38 5.197L1.13 21.077l4.787-1.253c1.761.96 3.4 1.461 4.73 1.442z" />
+                      </svg>
+                      <span>Falar com Especialista no WhatsApp</span>
+                    </motion.a>
 
-                  <a
-                    href="#planos"
-                    className="text-white hover:text-brand-light font-bold text-sm underline underline-offset-4 flex items-center gap-1.5"
-                  >
-                    <span>Ver Planos Disponíveis</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </a>
+                    <a
+                      href="#planos"
+                      className="text-white hover:text-brand-light font-bold text-sm underline underline-offset-4 flex items-center gap-1.5"
+                    >
+                      <span>Ver Planos Disponíveis</span>
+                      <ArrowRight className="w-4 h-4" />
+                    </a>
+                  </div>
+                  <p className="text-[10px] text-blue-100/70 text-center lg:text-left leading-normal select-none">
+                    *O redirecionamento ao WhatsApp destina-se única e exclusivamente a conversação consultiva humana, possibilitando o esclarecimento de dúvidas e suporte ao consumidor sobre os nossos serviços de tecnologia rodoviária.
+                  </p>
                 </div>
 
                 {/* Trust Badges */}
@@ -337,12 +345,88 @@ export default function App() {
                 </div>
               </div>
 
-              {/* Right Column: AI Live Assistant "Flowy" Embedded Side card */}
+              {/* Right Column: Premium Active Tag Card Presentation with Instant WhatsApp buttons */}
               <div className="lg:col-span-5 relative">
                 {/* High contrast background blur bubble */}
-                <div className="absolute -inset-1 bg-gradient-to-r from-brand-orange to-brand-blue rounded-3xl blur opacity-30 pointer-events-none" />
-                <div className="relative">
-                  <InteractiveChat config={siteConfig} />
+                <div className="absolute -inset-1 bg-gradient-to-r from-brand-orange to-brand-pink rounded-3xl blur opacity-30 pointer-events-none" />
+                
+                <div className="relative bg-brand-dark/55 backdrop-blur-md border border-white/10 rounded-2xl p-6 sm:p-8 shadow-2xl text-white">
+                  {/* Card Header */}
+                  <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-6">
+                    <span className="text-[10px] bg-brand-pink text-white font-extrabold uppercase px-2.5 py-1 rounded-full tracking-wider animate-pulse">
+                      Peça Grátis no WhatsApp
+                    </span>
+                    <span className="text-xs text-brand-orange font-bold flex items-center gap-1">
+                      <span className="w-2 h-2 bg-brand-orange rounded-full animate-ping" />
+                      Adesão Imediata Online
+                    </span>
+                  </div>
+
+                  {/* Virtual TAG Graphic representation */}
+                  <div className="bg-gradient-to-br from-brand-blue to-brand-dark border-2 border-dashed border-brand-orange/30 rounded-2xl p-6 mb-6 text-center shadow-inner relative overflow-hidden group hover:border-brand-orange/60 transition-all">
+                    {/* Gloss Light reflection effect */}
+                    <div className="absolute inset-x-0 top-0 h-4 bg-white/5 skew-y-3 pointer-events-none" />
+                    
+                    <div className="w-12 h-12 bg-brand-orange rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg shadow-brand-orange/20">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="#230C87" strokeWidth="4" className="w-6 h-6">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                      </svg>
+                    </div>
+                    
+                    <p className="font-display font-black text-lg tracking-wider text-white">VELO<span className="text-brand-orange">FLOW</span></p>
+                    <p className="text-[9px] text-gray-300 tracking-widest uppercase font-bold mt-1">TAG INTELIGENTE DIGITAL</p>
+                    
+                    {/* Simulated RFID Chip Graphic */}
+                    <div className="w-8 h-8 rounded bg-gradient-to-r from-yellow-400 to-amber-500 border border-yellow-600/30 mx-auto mt-4 flex items-center justify-center text-amber-950 font-mono text-[9px] font-extrabold">
+                      RFID
+                    </div>
+                    <div className="text-[9px] text-gray-400 font-mono mt-2">
+                      Adesivo autocolante de alta fixação para para-brisa
+                    </div>
+                  </div>
+
+                  {/* Direct Advantages Checkpoints */}
+                  <h3 className="font-display font-bold text-sm text-brand-orange uppercase tracking-wider mb-2">
+                    Vantagens ao pedir hoje:
+                  </h3>
+                  
+                  <ul className="space-y-2.5 text-xs text-gray-200 mb-6 font-medium">
+                    <li className="flex items-start gap-2">
+                      <span className="text-brand-orange font-bold text-sm leading-none pt-0.5">✓</span>
+                      <span><strong>Mensalidade Zero no 1º mês</strong> para testar livre de custos de adesão.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-brand-orange font-bold text-sm leading-none pt-0.5">✓</span>
+                      <span><strong>Envio Expresso do Adesivo</strong> direto para sua residência ou matriz da frota.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-brand-orange font-bold text-sm leading-none pt-0.5">✓</span>
+                      <span><strong>Passagem Livre e Automática</strong> em 100% das cancelas de pedágios e estacionamentos nacionais credenciados.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-brand-orange font-bold text-sm leading-none pt-0.5">✓</span>
+                      <span><strong>Sem taxas de recarga</strong> ou fidelidade. Você livre para ir e vir.</span>
+                    </li>
+                  </ul>
+
+                  {/* High conversion WhatsApp Contact CTAs */}
+                  <div className="space-y-3">
+                    <a
+                      id="hero-sidebar-whatsapp-purchase"
+                      href={getWhatsappLink("Olá! Gostaria de falar com um especialista para solicitar minha Tag Velo Flow Grátis agora.")}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-center gap-3 bg-brand-orange hover:bg-brand-orange/90 text-brand-blue font-display font-black text-sm px-6 py-4 rounded-xl shadow-xl shadow-brand-orange/20 transition-transform hover:-translate-y-0.5"
+                    >
+                      <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-brand-blue">
+                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.261 2.266 3.501 5.28 3.5 8.487-.018 6.657-5.357 11.996-11.967 11.996-2.005-.001-3.973-.504-5.713-1.463L0 24zm6.59-4.846c1.6.95 3.16 1.449 4.884 1.45 5.515 0 10.002-4.49 10.014-10.024.006-2.68-1.038-5.2-2.932-7.099s-4.42-2.936-7.103-2.936c-5.524 0-10.014 4.49-10.026 10.025-.002 1.83.475 3.619 1.38 5.197L1.13 21.077l4.787-1.253c1.761.96 3.4 1.461 4.73 1.442z" />
+                      </svg>
+                      <span>Solicitar Tag pelo WhatsApp ➔</span>
+                    </a>
+                    <p className="text-[10px] text-gray-300/85 leading-normal text-center select-none mt-2">
+                      *O botão direciona ao WhatsApp para atendimento humano que auxiliará pontualmente com dúvidas e com seu pedido personalizado.
+                    </p>
+                  </div>
                 </div>
               </div>
 
@@ -476,7 +560,7 @@ export default function App() {
                         </p>
                       </div>
                       {plan.highlight && (
-                        <span className="bg-brand-orange text-white text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full animate-bounce">
+                        <span className="bg-brand-pink text-white text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full animate-pulse">
                           Mais Popular
                         </span>
                       )}
@@ -495,8 +579,8 @@ export default function App() {
                           {plan.period}
                         </span>
                       </div>
-                      {plan.id === "premium" && (
-                        <p className="text-xs text-brand-orange font-bold mt-1">
+                      {plan.id !== "corp" && (
+                        <p className="text-xs text-brand-orange font-extrabold mt-1">
                           🎁 TESTE GRÁTIS: Pague R$ 0 no 1º mês!
                         </p>
                       )}
@@ -511,7 +595,7 @@ export default function App() {
                               plan.highlight ? "text-brand-orange fill-brand-blue" : "text-brand-blue fill-brand-light"
                             }`}
                           />
-                          <span className={plan.highlight ? "text-blue-50" : "text-gray-700 font-medium"}>
+                          <span className={plan.highlight ? "text-blue-50" : "text-gray-700 font-semibold"}>
                             {feature}
                           </span>
                         </li>
@@ -520,22 +604,25 @@ export default function App() {
                   </div>
 
                   {/* Pricing Action WhatsApp button */}
-                  <div className="mt-8">
+                  <div className="mt-8 flex flex-col gap-2">
                     <motion.a
                       id={`plan-cta-${plan.id}`}
                       href={getWhatsappLink(plan.whatsappMessage)}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`w-full block py-3.5 px-4 rounded-xl text-center font-display font-semibold text-xs sm:text-sm tracking-wide transition-all ${
+                      className={`w-full block py-4 px-4 rounded-xl text-center font-display font-black text-xs sm:text-sm tracking-wide transition-all ${
                         plan.highlight
-                          ? "bg-brand-orange text-white shadow-lg hover:bg-opacity-95"
-                          : "bg-brand-blue text-white hover:bg-opacity-95"
+                          ? "bg-brand-orange text-brand-blue shadow-lg hover:bg-brand-orange/95"
+                          : "bg-brand-blue text-white hover:bg-brand-dark"
                       }`}
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >
                       {plan.ctaText} →
                     </motion.a>
+                    <p className={`text-[9px] text-center px-1 font-medium ${plan.highlight ? 'text-blue-100/60' : 'text-gray-500'}`}>
+                      *Ao clicar, você iniciará contato no WhatsApp com nossa assessoria comercial estritamente para tirar suas dúvidas sobre o plano e prosseguir com suporte humano.
+                    </p>
                   </div>
                 </div>
               ))}
@@ -892,8 +979,8 @@ export default function App() {
           {/* Col 1: About the company */}
           <div className="lg:col-span-5 space-y-6">
             <a href="#" className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#003366" strokeWidth="3" className="w-5 h-5 text-brand-blue">
+              <div className="w-10 h-10 bg-brand-orange rounded-full flex items-center justify-center">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#1c003d" strokeWidth="3.5" className="w-5 h-5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                 </svg>
               </div>
@@ -902,19 +989,20 @@ export default function App() {
                   <span className="font-display font-black text-xl text-white tracking-tight">VELO</span>
                   <span className="font-display font-black text-xl text-brand-orange tracking-tight">FLOW</span>
                 </div>
-                <p className="text-[10px] text-gray-400 font-display font-bold uppercase tracking-widest mt-0.5">
-                  Tecnologia inteligente Ltda
+                <p className="text-[10px] text-brand-orange/80 font-display font-bold uppercase tracking-widest mt-0.5">
+                  SEU TRANSPORTE
                 </p>
               </div>
             </a>
 
             <p className="text-xs text-blue-100 leading-relaxed max-w-sm">
-              A <strong>Velo Flow</strong> ({siteConfig.companyName}) é uma startup brasileira de tecnologia e inteligência em mobilidade urbana focada em facilitar o dia a dia de frotistas e motoristas particulares.
+              A <strong>Velo Flow</strong> ({siteConfig.companyName}) é uma tecnologia autorizada e focada em inteligência em mobilidade urbana para facilitar o dia a dia de frotas e motoristas particulares.
             </p>
 
             <div className="text-xs text-gray-300 space-y-1.5 font-mono">
-              <p>📍 CNPJ Comercial: {siteConfig.cnpj}</p>
-              <p>🏢 Endereço Sede: {siteConfig.address}</p>
+              <p>📍 Razão Social: {siteConfig.companyName}</p>
+              <p>🏢 CNPJ Matriz: {siteConfig.cnpj}</p>
+              <p>🏢 Endereço: {siteConfig.address}</p>
             </div>
           </div>
 
@@ -948,31 +1036,31 @@ export default function App() {
               Atendimento e Canais
             </h4>
             <div className="space-y-3.5 text-xs text-blue-100">
-              <p className="flex items-center gap-2">
-                <span className="bg-white/10 p-1.5 rounded-lg text-brand-orange block">
-                  📞
-                </span>
-                <span><strong>Central 0800:</strong> 0900 7898</span>
+              <p className="text-gray-300 leading-relaxed mb-4">
+                Solicite sua tag inteligente diretamente no WhatsApp oficial de suporte de forma automatizada e sem burocracia.
               </p>
-              <p className="flex items-center gap-2">
-                <span className="bg-white/10 p-1.5 rounded-lg text-emerald-400 block font-bold font-mono">
-                  WS
-                </span>
-                <span><strong>WhatsApp de Vendas:</strong> {siteConfig.phoneDisplay}</span>
-              </p>
-              <p className="flex items-center gap-2">
-                <span className="bg-white/10 p-1.5 rounded-lg text-blue-400 block font-mono">
-                  @
-                </span>
-                <span><strong>E-mail Comercial:</strong> {siteConfig.email}</span>
+              <a
+                id="footer-whatsapp-chat-button"
+                href={getWhatsappLink("Olá! Gostaria de falar com um especialista e solicitar minha tag inteligente.")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex w-full items-center justify-center gap-3 bg-brand-orange text-brand-blue hover:bg-opacity-95 font-display font-black text-xs px-5 py-3.5 rounded-xl shadow-lg transition-transform hover:-translate-y-0.5"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-brand-blue">
+                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.261 2.266 3.501 5.28 3.5 8.487-.018 6.657-5.357 11.996-11.967 11.996-2.005-.001-3.973-.504-5.713-1.463L0 24zm6.59-4.846c1.6.95 3.16 1.449 4.884 1.45 5.515 0 10.002-4.49 10.014-10.024.006-2.68-1.038-5.2-2.932-7.099s-4.42-2.936-7.103-2.936c-5.524 0-10.014 4.49-10.026 10.025-.002 1.83.475 3.619 1.38 5.197L1.13 21.077l4.787-1.253c1.761.96 3.4 1.461 4.73 1.442z" />
+                </svg>
+                <span>Falar com Vendas no WhatsApp</span>
+              </a>
+              <p className="text-[9px] text-gray-400 select-none text-center">
+                *O canal de e-mail (contato.veloflow@gmail.com) e o suporte via WhatsApp destinam-se exclusivamente para auxílio, atendimento consultivo, esclarecimento de dúvidas e suporte ao cliente contratante.
               </p>
             </div>
 
             {/* Certificados de Blindagem */}
-            <div className="pt-4 flex gap-3">
+            <div className="pt-2 flex gap-3">
               {/* Site blindado */}
               <div className="bg-white/5 border border-white/10 px-3 py-2 rounded-xl flex items-center gap-2">
-                <Lock className="w-4 h-4 text-[#FF6B35]" />
+                <Lock className="w-4 h-4 text-brand-pink" />
                 <div>
                   <span className="block text-[8px] uppercase tracking-wider text-gray-400">Certificado</span>
                   <span className="block text-[10px] font-bold text-white font-mono leading-none">SSL ATIVO</span>
@@ -980,10 +1068,10 @@ export default function App() {
               </div>
               {/* Reclame aqui mockup badge */}
               <div className="bg-white/5 border border-white/10 px-3 py-2 rounded-xl flex items-center gap-2">
-                <span className="text-emerald-400 font-extrabold text-[12px] font-mono">RA</span>
+                <span className="text-brand-orange font-extrabold text-[12px] font-mono">RA</span>
                 <div>
                   <span className="block text-[8px] uppercase tracking-wider text-gray-400">Avaliação</span>
-                  <span className="block text-[10px] font-bold text-emerald-400 leading-none">NOTA 4.8 / 5</span>
+                  <span className="block text-[10px] font-bold text-brand-orange leading-none font-mono">NOTA 4.8 / 5</span>
                 </div>
               </div>
             </div>
@@ -991,19 +1079,265 @@ export default function App() {
 
         </div>
 
-        {/* Legal disclosures & copyrights compliant with Brazilian laws */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-[10px] text-blue-100/70">
-          <p className="text-center sm:text-left leading-relaxed">
-            © 2026 {siteConfig.companyName}. Todos os direitos reservados. CNPJ {siteConfig.cnpj}.<br />
-            As tarifas cobradas referem-se tão somente ao credenciamento, manutenção e comodidade operacional de nossa tecnologia urbana.
-          </p>
-          <div className="flex gap-4">
-            <span className="hover:text-white transition-colors cursor-pointer">Termos de Uso</span>
-            <span className="hover:text-white transition-colors cursor-pointer">Política de Privacidade</span>
-            <span className="hover:text-white transition-colors cursor-pointer">Segurança dos Dados</span>
+        {/* Legal disclosures & copyrights compliant with Brazilian laws and Google Ads Policy */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 border-t border-white/10 flex flex-col gap-6 text-[10px] text-blue-100/60 leading-relaxed">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <p className="text-justify">
+              <strong>Isenção de Responsabilidade e Licenciamento:</strong> A VELO FLOW ({siteConfig.companyName}) é uma marca e plataforma privada focada em intermediação de serviços de tecnologia, meios de pagamento eletrônico e facilidade logística para entrega de tags de identificação por radiofrequência (RFID) para-brisa. Não possuímos representação de caráter oficial, estatal, de autarquia ou de concessionária pública de rodovias de forma oficial autônoma. Atuamos estritamente como integrador credenciado de meios de pagamento eletrônico de pedágios e estacionamentos sob a regulamentação do Banco Central do Brasil.
+            </p>
+            <p className="text-justify">
+              <strong>Transparência de Ofertas, Envio e Cancelamento Sem Multas:</strong> O benefício de adesão com mensalidade isenta nos primeiros 30 (trinta) dias de teste (mensalidade grátis no primeiro mês) aplica-se de forma idêntica e sem restrições a todos os nossos planos e serviços de tag individual (Plano Básico e Plano Premium). O envio postal físico da Tag RFID adesivo de para-brisa para sua residência é 100% gratuito para todo o território nacional, livre de taxas adicionais de postagem ou frete. Não existe fidelidade contratual, termo de carência mínima obrigatória ou qualquer outra multa/taxa oculta para solicitação de cancelamento. O usuário tem autonomia e liberdade plena para cancelar ou desativar o plano a qualquer momento sem pagar nenhuma multa ou taxa rescisória — devendo unicamente arcar com o saldo ou tarifas oficiais de pedágios que de fato utilizar em trânsito. O cancelamento pode ser concluído imediatamente por WhatsApp pelo número a qualquer instante: <strong>(42) 99920-2204</strong> ou pelo e-mail oficial: <strong>contato.veloflow@gmail.com</strong>.
+            </p>
+          </div>
+          
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-4 border-t border-white/5 text-[9px] text-blue-100/50">
+            <p className="text-center sm:text-left">
+              © 2026 {siteConfig.companyName}. Todos os direitos reservados. CNPJ {siteConfig.cnpj}.<br />
+              Endereço: {siteConfig.address}. E-mail Oficial: {siteConfig.email}. Telefone: {siteConfig.phoneDisplay}.
+            </p>
+            <div className="flex flex-wrap gap-x-4 gap-y-2 justify-center sm:justify-end text-blue-100/80">
+              <button onClick={() => setIsTermsModalOpen(true)} className="hover:text-brand-orange hover:underline transition-colors cursor-pointer bg-transparent border-0 p-0 font-medium">Termos de Uso</button>
+              <span>•</span>
+              <button onClick={() => setIsPrivacyModalOpen(true)} className="hover:text-brand-orange hover:underline transition-colors cursor-pointer bg-transparent border-0 p-0 font-medium">Política de Privacidade</button>
+              <span>•</span>
+              <button onClick={() => setIsSecurityModalOpen(true)} className="hover:text-brand-orange hover:underline transition-colors cursor-pointer bg-transparent border-0 p-0 font-medium">Segurança dos Dados</button>
+              <span>•</span>
+              <button onClick={() => setIsCancellationModalOpen(true)} className="hover:text-brand-orange hover:underline transition-colors cursor-pointer bg-transparent border-0 p-0 font-medium text-brand-orange">Política de Cancelamento</button>
+            </div>
           </div>
         </div>
       </footer>
+
+      {/* Google Ads Compliance Modals */}
+      <AnimatePresence>
+        {/* Termos de Uso Modal */}
+        {isTermsModalOpen && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+          >
+            <motion.div 
+              initial={{ scale: 0.95, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.95, y: 20 }}
+              className="bg-white text-gray-800 rounded-2xl w-full max-w-2xl max-h-[85vh] flex flex-col overflow-hidden shadow-2xl relative border border-gray-100"
+            >
+              <div className="bg-brand-blue text-white px-6 py-4 flex items-center justify-between border-b">
+                <h3 className="font-display font-black text-xs sm:text-sm uppercase tracking-wider text-brand-orange">Termos de Uso do Serviço</h3>
+                <button onClick={() => setIsTermsModalOpen(false)} className="text-white hover:text-brand-orange transition-colors p-1 rounded-full hover:bg-white/10 cursor-pointer">
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+              <div className="p-6 overflow-y-auto space-y-4 text-xs leading-relaxed text-gray-700 font-sans">
+                <p className="font-bold text-brand-blue">Última atualização: Junho de 2026</p>
+                <p>
+                  Bem-vindo à plataforma <strong>Velo Flow</strong>, disponibilizada e operada por <strong>{siteConfig.companyName}</strong>, sob o CNPJ <strong>{siteConfig.cnpj}</strong>, com sede comercial localizada em <strong>{siteConfig.address}</strong>.
+                </p>
+                
+                <h4 className="font-bold text-xs sm:text-sm text-brand-blue pt-2 font-display">1. Objeto e Natureza dos Serviços</h4>
+                <p>
+                  A Velo Flow atua exclusivamente como desenvolvedora independente de soluções logísticas e intermediadora eletrônica de facilitadores de pagamento e entrega expressa de adesivos identificadores com tecnologia RFID. <strong>Esclarecemos expressamente que a Velo Flow não substitui, não possui, não representa de caráter oficial, estatal, de autarquia municipal, estadual ou nacional, ou de concessionárias rodoviárias públicas.</strong> Centralizamos e integramos a aquisição, o suporte, a postagem, o credenciamento em redes homologadas de meios de pagamento e o atendimento ao cliente para que ele usufrua de passagens automáticas em cancelas conveniadas.
+                </p>
+
+                <h4 className="font-bold text-xs sm:text-sm text-brand-blue pt-2 font-display">2. Adesão, Período de Testes e Isenção de Mensalidade</h4>
+                <p>
+                  Ao optar por qualquer um de nossos planos e serviços de assinatura (Plano Básico ou Plano Premium), o contratante tem direito incondicional ao benefício de mensalidade isenta nos primeiros 30 (trinta) dias de uso (mensalidade R$ 0 no primeiro mês). Adicionalmente, o envio do insumo físico (Tag adesiva RFID para-brisa) é inteiramente gratuito, sem nenhum custo extra de frete ou postagem nacional. Caso decida continuar com a tag de passagem automática ativa após os 30 dias grátis, incidirá a mensalidade regular recorrente do plano contratado (R$ 19,99/mês para o Plano Básico e R$ 49,99/mês para o Plano Premium). Não existe taxa contratual de rescisão ou fidelidade de qualquer espécie; o cliente tem a liberdade de cancelar ou desativar o plano sem custos ou multas quando quiser, sendo faturado apenas referente ao saldo ou tarifas oficiais de pedágios que efetivamente tiver consumido/utilizado em suas passagens.
+                </p>
+
+                <h4 className="font-bold text-xs sm:text-sm text-brand-blue pt-2 font-display">3. Direitos e Obrigações do Usuário</h4>
+                <p>
+                  O contratante compromete-se a fornecer informações verdadeiras e fidedignas sobre a titularidade e o veículo para-brisa. O uso indevido da tag em veículos não cadastrados ou modificados, bem como a evasão de pedágios por falta de saldo, é de responsabilidade estritamente pessoal e legal do motorista condutor.
+                </p>
+
+                <h4 className="font-bold text-xs sm:text-sm text-brand-blue pt-2 font-display">4. Modificações e Foro</h4>
+                <p>
+                  Reservamo-nos o direito de alterar os termos a qualquer momento, visando se adequar a novas resoluções de órgãos de trânsito ou financeiras do Banco Central do Brasil. Fica eleito o Foro de Mococa - SP para dirimir controvérsias decorrentes deste contrato, com exclusão de qualquer outro.
+                </p>
+              </div>
+              <div className="bg-gray-50 border-t px-6 py-4 flex justify-end">
+                <button onClick={() => setIsTermsModalOpen(false)} className="bg-brand-blue hover:bg-opacity-95 text-white font-display font-bold text-xs px-5 py-2.5 rounded-lg transition-colors cursor-pointer">
+                  Entendi e Aceito
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+
+        {/* Política de Privacidade Modal */}
+        {isPrivacyModalOpen && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+          >
+            <motion.div 
+              initial={{ scale: 0.95, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.95, y: 20 }}
+              className="bg-white text-gray-800 rounded-2xl w-full max-w-2xl max-h-[85vh] flex flex-col overflow-hidden shadow-2xl relative border border-gray-100"
+            >
+              <div className="bg-brand-blue text-white px-6 py-4 flex items-center justify-between border-b">
+                <h3 className="font-display font-black text-xs sm:text-sm uppercase tracking-wider text-brand-orange">Política de Privacidade</h3>
+                <button onClick={() => setIsPrivacyModalOpen(false)} className="text-white hover:text-brand-orange transition-colors p-1 rounded-full hover:bg-white/10 cursor-pointer">
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+              <div className="p-6 overflow-y-auto space-y-4 text-xs leading-relaxed text-gray-700 font-sans">
+                <p className="font-bold text-brand-blue">Última atualização: Junho de 2026</p>
+                <p>
+                  Nossa equipe de privacidade e conformidade de dados da <strong>Velo Flow</strong>, sob gestão integrada de <strong>{siteConfig.companyName}</strong>, valoriza e protege as suas informações. Esta política explica de forma clara quais dados coletamos, a base jurídica para o tratamento adequado (em conformidade com a LGPD - Lei Geral de Proteção de Dados Pessoais do Brasil), e suas garantias como titular de dados.
+                </p>
+
+                <h4 className="font-bold text-xs sm:text-sm text-brand-blue pt-2 font-display">1. Dados coletados e sua finalidade</h4>
+                <p>
+                  Coletamos seus dados cadastrais (Nome Completo, CNPJ/CPF, Endereço de Entrega, E-mail, Detalhes do Veículo e Número de WhatsApp) para processar o credenciamento do adesivo RFID, viabilizar a entrega terceirizada expressa domiciliar e permitir o contato de suporte e faturamento transparente.
+                </p>
+
+                <h4 className="font-bold text-xs sm:text-sm text-brand-blue pt-2 font-display">2. Uso de Cookies e Pixel de Rastreamento de Terceiros</h4>
+                <p>
+                  Utilizamos recursos tecnológicos padrões de internet como Cookies de Navegação, Pixels Oficiais de Rastreamento do Google Analytics e Google Ads para entender de forma anônima a navegação no site, garantir o bom funcionamento do simulador de pedágios e otimizar campanhas de anúncios digitais em conformidade e respeito aos regulamentos de privacidade do Google.
+                </p>
+
+                <h4 className="font-bold text-xs sm:text-sm text-brand-blue pt-2 font-display">3. Compartilhamento e Direitos do Titular</h4>
+                <p>
+                  Seus dados pessoais não serão de nenhuma forma vendidos ou alugados para terceiros. O compartilhamento ocorre única e exclusivamente com os operadores logísticos de postagem física dos Correios ou transportadora credenciada e os sistemas homologados de processamento de cobrança eletrônica parceiros. Você possui direito a qualquer momento de solicitar a retificação, exclusão, correção e portabilidade gratuita de seus dados sob guarda corporativa diretamente pelo nosso canal de DPO no e-mail: <strong>{siteConfig.email}</strong>.
+                </p>
+              </div>
+              <div className="bg-gray-50 border-t px-6 py-4 flex justify-end">
+                <button onClick={() => setIsPrivacyModalOpen(false)} className="bg-brand-blue hover:bg-opacity-95 text-white font-display font-bold text-xs px-5 py-2.5 rounded-lg transition-colors cursor-pointer">
+                  Entendi e Aceito
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+
+        {/* Segurança dos Dados Modal */}
+        {isSecurityModalOpen && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+          >
+            <motion.div 
+              initial={{ scale: 0.95, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.95, y: 20 }}
+              className="bg-white text-gray-850 rounded-2xl w-full max-w-2xl max-h-[85vh] flex flex-col overflow-hidden shadow-2xl relative border border-gray-100"
+            >
+              <div className="bg-brand-blue text-white px-6 py-4 flex items-center justify-between border-b">
+                <h3 className="font-display font-black text-xs sm:text-sm uppercase tracking-wider text-brand-orange">Segurança e Proteção de Dados</h3>
+                <button onClick={() => setIsSecurityModalOpen(false)} className="text-white hover:text-brand-orange transition-colors p-1 rounded-full hover:bg-white/10 cursor-pointer">
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+              <div className="p-6 overflow-y-auto space-y-4 text-xs leading-relaxed text-gray-700 font-sans">
+                <p className="font-bold text-brand-blue">Última atualização: Junho de 2026</p>
+                <p>
+                  A segurança cibernética e a integridade de sua infraestrutura transacional são tratadas pela <strong>Velo Flow</strong> sob os mais altos padrões de criptografia globais. Toda a troca de dados entre seu navegador de internet e nossa plataforma ocorre sob rigoroso protocolo criptografado <strong>HTTPS (SSL Ativo) de 256 bits</strong>, blindado contra interceptações maliciosas.
+                </p>
+
+                <h4 className="font-bold text-xs sm:text-sm text-brand-blue pt-2 font-display">1. Infraestrutura Server-Side Resiliente</h4>
+                <p>
+                  Nossos bancos de dados e chaves API sensíveis são armazenados integralmente em servidores cloud norte-americanos e nacionais redundantes, com rotinas de backup diárias e rastreabilidade total de logs para mitigar ativamente riscos de vazamentos.
+                </p>
+
+                <h4 className="font-bold text-xs sm:text-sm text-brand-blue pt-2 font-display">2. Transações Financeiras e PCI-DSS</h4>
+                <p>
+                  Nós não armazenamos dados de cartões de débito ou crédito em nossos servidores em texto plano. Todo o fluxo transacional é integrado via APIs tokenizadas aos gateways de pagamento que possuem certificação PCI-DSS Nível 1.
+                </p>
+              </div>
+              <div className="bg-gray-50 border-t px-6 py-4 flex justify-end font-medium">
+                <button onClick={() => setIsSecurityModalOpen(false)} className="bg-brand-blue hover:bg-opacity-95 text-white font-display font-bold text-xs px-5 py-2.5 rounded-lg transition-colors cursor-pointer">
+                  Fechar de Forma Segura
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+
+        {/* Política de Cancelamento Modal */}
+        {isCancellationModalOpen && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+          >
+            <motion.div 
+              initial={{ scale: 0.95, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.95, y: 20 }}
+              className="bg-white text-gray-800 rounded-2xl w-full max-w-2xl max-h-[85vh] flex flex-col overflow-hidden shadow-2xl relative border border-gray-100"
+            >
+              <div className="bg-brand-blue text-white px-6 py-4 flex items-center justify-between border-b">
+                <h3 className="font-display font-black text-xs sm:text-sm uppercase tracking-wider text-brand-orange">Política Transparente de Cancelamento</h3>
+                <button onClick={() => setIsCancellationModalOpen(false)} className="text-white hover:text-brand-orange transition-colors p-1 rounded-full hover:bg-white/10 cursor-pointer">
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+              <div className="p-6 overflow-y-auto space-y-4 text-xs leading-relaxed text-gray-700 font-sans">
+                <p className="font-bold text-brand-blue">Última atualização: Junho de 2026</p>
+                <p className="font-semibold text-emerald-800 bg-emerald-50 px-3 py-2 rounded border border-emerald-100">
+                  Compromisso Velo Flow: Respeito integral ao consumidor segundo as normas do Código de Defesa do Consumidor brasileiro (Lei nº 8.078/90) e diretrizes internacionais de comércio digital transparente.
+                </p>
+
+                <h4 className="font-bold text-xs sm:text-sm text-brand-blue pt-2 font-display">1. Direito de Desistência, Arrependimento e Período de Testes</h4>
+                <p>
+                  O consumidor possui o direito incondicional de desistência e arrependimento decorrente de compras digitais nos termos das leis vigentes. Oferecemos 30 (trinta) dias de experimentação inteiramente gratuitos para todos os planos individuais. O frete e envio postal de postagem da tag adesiva física para o seu para-brisa é de custo zero (frete grátis) e não há taxas adicionais de seguro ou envio.
+                </p>
+
+                <h4 className="font-bold text-xs sm:text-sm text-brand-blue pt-2 font-display">2. Cancelamento Sem Multa Rescisória e Sem Taxas Extras</h4>
+                <p>
+                  Não cobramos tarifas adicionais de fidelização, prazos mínimos de carência obrigatória ou taxas contratuais rescisórias. O cancelamento do seu plano e a desativação da tag em nosso sistema podem ser efetuados a qualquer instante, livre de qualquer ônus financeiro. Você só precisará arcar com as despesas e tarifas das passagens de pedágio que efetivamente realizou durante suas viagens e trânsito rodoviário — não havendo qualquer tipo de cobrança de rescisão ou multas ocultas.
+                </p>
+
+                <h4 className="font-bold text-xs sm:text-sm text-brand-blue pt-2 font-display">3. Como Solicitar o Cancelamento de Forma Imediata?</h4>
+                <p>
+                  Para cancelar, basta encaminhar uma mensagem simples para o suporte técnico operacional via WhatsApp no número <strong>(42) 99920-2204</strong> ou enviar um e-mail com a placa do veículo cadastrado para <strong>contato.veloflow@gmail.com</strong>. Nossa equipe de faturamento efetivará em sistema a desativação da tag e do plano dentro do expediente corporativo no prazo regulamentar máximo de 24 horas úteis, sem burocracias ou contrapropostas invasivas.
+                </p>
+              </div>
+              <div className="bg-gray-50 border-t px-6 py-4 flex justify-end gap-3 font-medium">
+                <a 
+                  href={getWhatsappLink("Olá! Preciso solicitar suporte rápido ou cancelamento de tag.")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-brand-pink hover:bg-opacity-95 text-white font-display font-bold text-xs px-5 py-2.5 rounded-lg transition-colors cursor-pointer text-center flex items-center justify-center"
+                >
+                  Solicitar pelo WhatsApp
+                </a>
+                <button onClick={() => setIsCancellationModalOpen(false)} className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-display font-medium text-xs px-5 py-2.5 rounded-lg transition-colors cursor-pointer">
+                  Fechar Janela
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Floating WhatsApp Pill (explicitly stating it goes to WhatsApp for human support) */}
+      <motion.a
+        id="floating-whatsapp-bubble"
+        href={getWhatsappLink("Olá! Gostaria de tirar dúvidas em tempo real sobre o funcionamento da Tag Inteligente Velo Flow.")}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 z-40 bg-[#25D6E9] hover:bg-[#1fbccf] text-brand-blue px-4 py-3 rounded-full shadow-2xl hover:scale-105 transition-all flex items-center gap-2 border border-white/20 select-none cursor-pointer"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+      >
+        <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-[#230C87]">
+          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.261 2.266 3.501 5.28 3.5 8.487-.018 6.657-5.357 11.996-11.967 11.996-2.005-.001-3.973-.504-5.713-1.463L0 24zm6.59-4.846c1.6.95 3.16 1.449 4.884 1.45 5.515 0 10.002-4.49 10.014-10.024.006-2.68-1.038-5.2-2.932-7.099s-4.42-2.936-7.103-2.936c-5.524 0-10.014 4.49-10.026 10.025-.002 1.83.475 3.619 1.38 5.197L1.13 21.077l4.787-1.253c1.761.96 3.4 1.461 4.73 1.442z" />
+        </svg>
+        <span className="font-display font-medium text-xs tracking-wide">Dúvidas no WhatsApp</span>
+        <span className="relative flex h-2 w-2">
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+          <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+        </span>
+      </motion.a>
     </div>
   );
 }

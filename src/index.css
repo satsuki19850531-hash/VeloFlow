@@ -6,14 +6,13 @@
   --font-sans: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-display: 'Montserrat', sans-serif;
   
-  --color-primary: #003366;
-  --color-secondary: #FF6B35;
-  --color-brand-blue: #003366;
-  --color-brand-orange: #FF6B35;
-  --color-brand-light: #E8F4FD;
-  --color-brand-dark: #333333;
+  --color-brand-blue: #230C87; /* Request: #230C87 Primary Brand Color */
+  --color-brand-orange: #25D6E9; /* Request: #25D6E9 Premium High-Contrast Cyan */
+  --color-brand-pink: #ff2b85; /* Veloe Vibrant Accent Pink */
+  --color-brand-light: #f3efff; /* Velvet Soft Light */
+  --color-brand-dark: #110057; /* Darkest Indigo Purple */
   --color-brand-bg: #FFFFFF;
-  --color-brand-slate: #F8FAFC;
+  --color-brand-slate: #fafdff;
 }
 
 /* Custom transitions and scroll behaviors */
