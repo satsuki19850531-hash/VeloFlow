@@ -27,7 +27,7 @@ export default function SavingsCalculator({ config }: SavingsCalculatorProps) {
   const co2Reduction = Math.round(fuelLitersSaved * co2Factor);
 
   const getWhatsappLink = () => {
-    const textMsg = `Olá! Usei a calculadora de economia da Velo Flow e vi que perco ${hoursSaved} horas por ano em filas! Quero parar de gastar R$ ${fuelValueSaved} de combustível e assinar o Plano Premium para passar livre.`;
+    const textMsg = `Olá! Usei a calculadora de economia da Velo Flow e vi que perco ${hoursSaved} horas por ano em filas! Quero parar de gastar R$ ${fuelValueSaved} de combustível e assinar o Plano Premium para simplificar minha rotina.`;
     return `https://wa.me/${config.whatsAppNumber}?text=${encodeURIComponent(textMsg)}`;
   };
 
@@ -35,13 +35,13 @@ export default function SavingsCalculator({ config }: SavingsCalculatorProps) {
     <div className="bg-white rounded-3xl shadow-xl border border-gray-100 p-6 md:p-8">
       <div className="text-center max-w-2xl mx-auto mb-8">
         <span className="bg-brand-light text-brand-blue text-xs font-display font-bold uppercase tracking-widest px-3.5 py-1.5 rounded-full inline-block">
-          Simulador de Economia Velo Flow
+          Simulador de Economia de Tempo e Combustível
         </span>
         <h3 className="font-display font-extrabold text-2xl md:text-3xl text-brand-blue mt-3">
-          Quanto você gasta esperando no pedágio?
+          Quanto você gasta esperando em filas nos deslocamentos?
         </h3>
         <p className="text-gray-500 text-sm mt-2">
-          Selecione a frequência de suas viagens e veja o tempo e dinheiro desperdiçados que você salvaria com a nossa tag.
+          Selecione a frequência de suas viagens e veja o tempo e combustível que você pouparia com a nossa solução.
         </p>
       </div>
 
@@ -80,7 +80,7 @@ export default function SavingsCalculator({ config }: SavingsCalculatorProps) {
             <div className="flex justify-between items-center mb-3">
               <span className="font-display font-semibold text-gray-700 text-sm flex items-center gap-2">
                 <Clock className="w-4 h-4 text-brand-blue" />
-                Tempo médio na fila (Booths)
+                Tempo médio em filas de espera
               </span>
               <span className="bg-brand-orange text-white font-mono text-sm px-3 py-1 rounded-full font-bold">
                 {waitTime} {waitTime === 1 ? "minuto" : "minutos"}
@@ -106,7 +106,7 @@ export default function SavingsCalculator({ config }: SavingsCalculatorProps) {
           <div className="p-4 rounded-xl bg-orange-50 border border-orange-100 flex items-start gap-3">
             <ShieldAlert className="w-5 h-5 text-brand-orange flex-shrink-0 mt-0.5" />
             <p className="text-xs text-amber-800 leading-relaxed">
-              <strong>Você sabia?</strong> No trânsito pesado de feriados ou fins de semana, a espera média individual nos pedágios de São Paulo e Rio de Janeiro pode ultrapassar <strong>25 minutos por barreira</strong>.
+              <strong>Você sabia?</strong> No trânsito pesado de feriados ou fins de semana, a espera média individual em barreiras de deslocamento de São Paulo e Rio de Janeiro pode ultrapassar <strong>25 minutos por parada</strong>.
             </p>
           </div>
         </div>
@@ -127,7 +127,7 @@ export default function SavingsCalculator({ config }: SavingsCalculatorProps) {
               </span>
             </div>
             <p className="text-xs text-brand-light/70 mt-3 border-t border-white/10 pt-3">
-              Tempo livre para curtir a família, trabalhar ou relaxar, em vez de encarar filas exaustivas.
+              Tempo livre para curtir a família, trabalhar ou relaxar, em vez de encarar lentidão e espera.
             </p>
           </div>
 
@@ -145,7 +145,7 @@ export default function SavingsCalculator({ config }: SavingsCalculatorProps) {
               </span>
             </div>
             <p className="text-xs text-gray-400 mt-3 border-t border-gray-100 pt-3">
-              Economia estimada em litros de combustível perdidos puramente em marcha lenta na cabine.
+              Economia estimada em litros de combustível que deixam de ser perdidos puramente com o veículo parado em marcha lenta.
             </p>
           </div>
 
@@ -164,7 +164,7 @@ export default function SavingsCalculator({ config }: SavingsCalculatorProps) {
                 </span>
               </div>
               <div className="text-xs text-emerald-800/80 max-w-sm sm:border-l sm:border-emerald-200 sm:pl-4">
-                Pulsar a embreagem e reacelerar gera combustão incompleta. Você economiza o equivalente a plantar <strong>{Math.ceil(co2Reduction / 7)} árvores brasileiras</strong> ao ano!
+                Reduzir arranques lentos diminui emissões atmosféricas por combustão instável. Você economiza o equivalente a plantar <strong>{Math.ceil(co2Reduction / 7)} árvores brasileiras</strong> ao ano!
               </div>
             </div>
           </div>
@@ -181,7 +181,7 @@ export default function SavingsCalculator({ config }: SavingsCalculatorProps) {
               whileTap={{ y: 0 }}
             >
               <Zap className="w-5 h-5 text-white fill-white animate-pulse" />
-              <span>Garantir Meu Premium & Parar de Desperdiçar Dinheiro!</span>
+              <span>Garantir Meu Plano Premium & Ter Mais Praticidade!</span>
             </motion.a>
           </div>
         </div>

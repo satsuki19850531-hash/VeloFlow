@@ -66,11 +66,11 @@ export default function App() {
 
     if (match) {
       setCoverageResult(
-        `✅ Ótima notícia! Temos cobertura completa no estado de ${match.stateName} (${match.abbreviation})! Atendemos concessionárias como ${match.concessions.slice(0, 3).join(", ")} e cobrimos mais de ${match.citiesCovered} municípios na região.`
+        `✅ Ótima notícia! Temos cobertura ampla no estado de ${match.stateName} (${match.abbreviation})! Atendemos eixos viários integrados operados por empresas como ${match.concessions.slice(0, 3).join(", ")} e cobrimos mais de ${match.citiesCovered} municípios na região.`
       );
     } else {
       setCoverageResult(
-        "📍 Cobertura confirmada! Temos mais de 1.200 postos cadastrados pelo país. Para confirmar o pedágio ou estacionamento de sua cidade específica, clique no botão e fale conosco via WhatsApp!"
+        "📍 Cobertura confirmada! Temos mais de 1.200 trajetos e pontos cadastrados pelo país. Para confirmar o uso e os eixos integrados de sua cidade específica, clique no botão e fale conosco via WhatsApp!"
       );
     }
   };
@@ -262,15 +262,15 @@ export default function App() {
                 {/* Micro Pill */}
                 <span className="inline-flex items-center gap-2 bg-brand-light/10 text-brand-light border border-white/15 px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider">
                   <Award className="w-3.5 h-3.5 text-brand-orange fill-brand-orange" />
-                  Tecnologia Inteligente e Sem Burocracia para Estradas
+                  Tecnologia Inteligente e Sem Burocracia para sua Jornada
                 </span>
 
                 <h1 className="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl text-white leading-tight tracking-tight">
-                  Tag Inteligente que Dispensa Paradas
+                  Mais praticidade para sua rotina
                 </h1>
 
                 <p className="text-blue-100 text-lg sm:text-xl font-light leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                  Conecte seu veículo aos pedágios e estacionamentos de todo o Brasil. Evite filas estressantes com aprovação imediata via WhatsApp.
+                  Conheça uma solução moderna para simplificar seus deslocamentos e ter mais conveniência no dia a dia.
                 </p>
 
                 {/* Main Action Nodes */}
@@ -300,7 +300,7 @@ export default function App() {
                     </a>
                   </div>
                   <p className="text-[10px] text-blue-100/70 text-center lg:text-left leading-normal select-none">
-                    *O redirecionamento ao WhatsApp destina-se única e exclusivamente a conversação consultiva humana, possibilitando o esclarecimento de dúvidas e suporte ao consumidor sobre os nossos serviços de tecnologia rodoviária.
+                    *O redirecionamento ao WhatsApp destina-se única e exclusivamente a conversação consultiva humana, possibilitando o esclarecimento de dúvidas e suporte ao consumidor sobre os nossos serviços de tecnologia de mobilidade.
                   </p>
                 </div>
 
@@ -311,23 +311,23 @@ export default function App() {
                       ⭐ 4.8/5
                     </span>
                     <span className="text-[10px] text-blue-100 uppercase tracking-wider block mt-0.5">
-                      Avaliação Reclame Aqui
+                      Avaliação Satisfatória
                     </span>
                   </div>
                   <div className="border-l border-white/10 pl-4">
                     <span className="block font-display font-extrabold text-brand-orange text-lg sm:text-xl">
-                      100%
+                      Praticidade
                     </span>
                     <span className="text-[10px] text-blue-100 uppercase tracking-wider block mt-0.5">
-                      Inovação Nacional
+                      Foco no Motorista
                     </span>
                   </div>
                   <div className="border-l border-white/10 pl-4">
                     <span className="block font-display font-extrabold text-white text-xs sm:text-sm mt-1">
-                      90%+ COBERTO
+                      COBERTURA AMPLA
                     </span>
                     <span className="text-[10px] text-blue-100 uppercase tracking-wider block mt-1.5">
-                      Pedágios do Brasil
+                      Em diversos eixos
                     </span>
                   </div>
                 </div>
@@ -338,7 +338,7 @@ export default function App() {
                     <CheckCircle2 className="w-5 h-5 fill-brand-orange text-brand-blue" />
                   </div>
                   <p className="text-xs text-blue-100">
-                    🏆 <strong>Aplicativo Recomendado por Motoristas.</strong> Desfrute da melhor facilidade urbana sem taxas ocultas de manutenção.
+                    🏆 <strong>Recomendado por Motoristas.</strong> Desfrute de total conveniência urbana sem taxas ocultas de manutenção.
                   </p>
                 </div>
               </div>
@@ -399,7 +399,7 @@ export default function App() {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-brand-orange font-bold text-sm leading-none pt-0.5">✓</span>
-                      <span><strong>Passagem Livre e Automática</strong> em 100% das cancelas de pedágios e estacionamentos nacionais de nossa rede integrada de parceiros conveniados.</span>
+                      <span><strong>Experiência mais fluida</strong> em pontos de passagens e estabelecimentos integrados de nossa ampla rede de utilização.</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-brand-orange font-bold text-sm leading-none pt-0.5">✓</span>
@@ -444,7 +444,7 @@ export default function App() {
                 Sua viagem fluida em apenas 3 passos simples
               </h2>
               <p className="text-gray-500 text-sm sm:text-base mt-3">
-                Diga adeus à burocracia dos pedágios antigos. Entenda como a Velo Flow moderniza sua locomoção diária de ponta a ponta.
+                Diga adeus à lentidão em filas de espera. Entenda como a Velo Flow moderniza seus deslocamentos de ponta a ponta.
               </p>
             </div>
 
@@ -498,7 +498,7 @@ export default function App() {
                     Ampla Cobertura Nacional
                   </h3>
                   <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
-                    Nosso sistema privado de tecnologia é aceito em mais de 90% das rodovias estaduais e federais concessionadas brasileiras, além de shoppings e aeroportos parceiros.
+                    Nosso sistema privado de tecnologia oferece ampla aceitação em eixos viários nacionais, além de shoppings e aeroportos parceiros.
                   </p>
                 </div>
                 <div className="mt-6 pt-4 border-t border-gray-150/45 text-xs text-brand-blue font-semibold flex items-center justify-between">
@@ -639,13 +639,13 @@ export default function App() {
                 </thead>
                 <tbody className="divide-y divide-gray-100 font-medium text-gray-700">
                   <tr>
-                    <td className="py-3">Passagem Direta em Pedágios</td>
+                    <td className="py-3">Passagem Direta em Vias Conveniadas</td>
                     <td className="py-3 text-center text-emerald-600">✔</td>
                     <td className="py-3 text-center text-emerald-600">✔</td>
                     <td className="py-3 text-center text-emerald-600">✔</td>
                   </tr>
                   <tr>
-                    <td className="py-3">Estacionamentos em Shoppings/Aeroportos</td>
+                    <td className="py-3">Acesso Facilitado em Shoppings/Aeroportos</td>
                     <td className="py-3 text-center text-gray-400">-</td>
                     <td className="py-3 text-center text-emerald-600">✔</td>
                     <td className="py-3 text-center text-emerald-600">✔</td>
@@ -687,10 +687,10 @@ export default function App() {
                     Ampla Rede Integrada e Privada
                   </span>
                   <h2 className="font-display font-black text-3xl md:text-4xl text-brand-blue mt-4">
-                    Mais de 1.200 pontos e rodovias atendidas
+                    Mais de 1.200 pontos e eixos viários atendidos
                   </h2>
                   <p className="text-gray-500 text-sm mt-3 leading-relaxed">
-                    Nossa tecnologia de leitura é plenamente compatível com as antenas de passagens das maiores concessionárias do território brasileiro, oferecendo passagem livre nas saídas que você utiliza.
+                    Nossa tecnologia de leitura é plenamente compatível com as antenas de passagens das maiores redes de utilização do território brasileiro, oferecendo uma experiência mais fluida nas saídas que você utiliza.
                   </p>
                 </div>
 
@@ -744,14 +744,14 @@ export default function App() {
                 <div>
                   <motion.a
                     id="coverage-whats-cta-btn"
-                    href={getWhatsappLink("Olá! Gostaria de verificar se a Velo Flow cobre o pedágio/região da minha cidade.")}
+                    href={getWhatsappLink("Olá! Gostaria de verificar se a Velo Flow cobre minha rota/região da minha cidade.")}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-brand-blue hover:bg-opacity-95 text-white font-display font-bold px-6 py-3.5 rounded-xl shadow-md cursor-pointer text-xs"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
-                    <span>Verificar Cobertura Completa via WhatsApp</span>
+                    <span>Verificar Ampla Cobertura via WhatsApp</span>
                   </motion.a>
                 </div>
               </div>
@@ -789,12 +789,12 @@ export default function App() {
                   {/* Highway tags */}
                   <div>
                     <span className="text-xs text-brand-orange font-bold uppercase block tracking-wider mb-2">
-                      Rodovias Principais Livres:
+                      Principais eixos integrados na região:
                     </span>
                     <div className="flex flex-wrap gap-1.5">
                       {COVERAGE_REGIONS[activeCoverageIndex].highways.map((hw) => (
                         <span key={hw} className="bg-brand-slate text-brand-blue text-xs font-semibold px-2.5 py-1 rounded border border-gray-150/50">
-                          🛣️ Rod. {hw}
+                          🛣️ Eixo {hw}
                         </span>
                       ))}
                     </div>
@@ -803,7 +803,7 @@ export default function App() {
                   {/* Concessionaires lists */}
                   <div className="pt-2 border-t border-gray-50">
                     <span className="text-xs text-gray-500 font-bold uppercase block tracking-wider mb-2">
-                      Concessionárias Oficiais Velo Flow:
+                      Redes e eixos atendidos pela Velo Flow:
                     </span>
                     <div className="flex flex-wrap gap-1.5">
                       {COVERAGE_REGIONS[activeCoverageIndex].concessions.map((cc) => (
@@ -819,7 +819,7 @@ export default function App() {
                 <div className="flex items-start gap-2 text-xs text-gray-500 leading-relaxed bg-brand-light/35 p-3.5 rounded-xl border border-brand-light">
                   <span className="text-orange-600">⚠</span>
                   <p>
-                    <strong>Atenção:</strong> De acordo com a homologação de mobilidadeSIGEP, os 10% restantes de pedágios não englobados correspondem a balsas fluviais pontuais ou acessos remotos não automatizados por cancelas físicas.
+                    <strong>Atenção:</strong> De acordo com diretrizes de gestão de mobilidade, alguns trajetos pontuais podem corresponder a balsas fluviais ou acessos específicos que necessitam de leitura presencial alternativa.
                   </p>
                 </div>
               </div>
@@ -1078,10 +1078,10 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 border-t border-white/10 flex flex-col gap-6 text-[10px] text-blue-100/60 leading-relaxed">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <p className="text-justify">
-              <strong>Isenção de Responsabilidade e Licenciamento:</strong> A VELO FLOW ({siteConfig.companyName}) é uma marca e plataforma privada focada em intermediação de serviços de tecnologia, meios de pagamento eletrônico e facilidade logística para entrega de fita de identificação por radiofrequência (RFID) para-brisa. Não possuímos representação de caráter oficial, estatal, de autarquia ou de concessionária pública de rodovias. A Velo Flow é uma empresa privada e independente. Não somos órgão governamental, concessionária de rodovia, entidade pública ou representante oficial de qualquer órgão público ou concessionária. Todos os serviços são oferecidos de forma independente.
+              <strong>Isenção de Responsabilidade e Licenciamento:</strong> A Velo Flow é uma empresa privada e independente. Não possui vínculo com órgãos públicos, entidades governamentais ou concessionárias. Todas as marcas eventualmente mencionadas pertencem aos seus respectivos proprietários. Todos os serviços são oferecidos de forma independente.
             </p>
             <p className="text-justify">
-              <strong>Transparência de Ofertas, Envio e Cancelamento Sem Multas:</strong> O benefício de adesão com mensalidade isenta nos primeiros 30 (trinta) dias de teste (mensalidade grátis no primeiro mês) aplica-se de forma idêntica e sem restrições a todos os nossos planos e serviços de tag individual (Plano Básico e Plano Premium). O envio postal físico da Tag RFID adesivo de para-brisa para sua residência é 100% gratuito para todo o território nacional, livre de taxas adicionais de postagem ou frete. Não existe fidelidade contratual, termo de carência mínima obrigatória ou qualquer outra multa/taxa oculta para solicitação de cancelamento. O usuário tem autonomia e liberdade plena para cancelar ou desativar o plano a qualquer momento sem pagar nenhuma multa ou taxa rescisória — devendo unicamente arcar com o saldo ou tarifas oficiais de pedágios que de fato utilizar em trânsito. O cancelamento pode ser concluído imediatamente por WhatsApp pelo número a qualquer instante: <strong>(42) 99920-2204</strong> ou pelo e-mail de suporte: <strong>contato.veloflow@gmail.com</strong>.
+              <strong>Transparência de Ofertas, Envio e Cancelamento Sem Multas:</strong> O benefício de adesão com mensalidade isenta nos primeiros 30 (trinta) dias de teste (mensalidade grátis no primeiro mês) aplica-se de forma idêntica e sem restrições a todos os nossos planos e serviços de tag individual (Plano Básico e Plano Premium). O envio postal físico do adesivo inteligente de para-brisa para sua residência é 100% gratuito para todo o território nacional, livre de taxas adicionais de postagem ou frete. Não existe fidelidade contratual, termo de carência mínima obrigatória ou qualquer outra multa/taxa para solicitação de cancelamento. O usuário tem autonomia e liberdade plena para cancelar ou desativar o plano a qualquer momento sem pagar nenhuma multa ou taxa rescisória — devendo unicamente arcar com o saldo ou tarifas regulares de passagem da rede de utilização que de fato consumir. O cancelamento pode ser concluído imediatamente por WhatsApp pelo número a qualquer instante: <strong>(42) 99920-2204</strong> ou pelo e-mail de suporte: <strong>contato.veloflow@gmail.com</strong>.
             </p>
           </div>
           
@@ -1135,17 +1135,17 @@ export default function App() {
                 
                 <h4 className="font-bold text-xs sm:text-sm text-brand-blue pt-2 font-display">1. Objeto e Natureza dos Serviços</h4>
                 <p>
-                  A Velo Flow atua exclusivamente como desenvolvedora independente de soluções logísticas e intermediadora eletrônica de facilitadores de pagamento e entrega de fita de identificação eletrônica com tecnologia RFID. <strong>Esclarecemos expressamente que a Velo Flow não substitui, não possui, não representa caráter oficial, estatal, de autarquia municipal, estadual ou nacional, ou de concessionárias rodoviárias públicas.</strong> Centralizamos e integramos a aquisição, o suporte, a postagem e o atendimento ao cliente para que ele usufrua de passagens automáticas em cancelas conveniadas.
+                  A Velo Flow atua exclusivamente como desenvolvedora independente de soluções logísticas e intermediadora eletrônica de facilitadores de pagamento e entrega de fita de identificação eletrônica com tecnologia RFID. <strong>Esclarecemos expressamente que a Velo Flow é uma empresa privada e independente, de modo a não possuir nem representar nenhum tipo de caráter de administração pública ou vinculação governamental direta.</strong> Centralizamos e integramos a aquisição, o suporte, a postagem e o atendimento ao cliente para que ele usufrua de passagens automáticas em cancelas conveniadas.
                 </p>
 
                 <h4 className="font-bold text-xs sm:text-sm text-brand-blue pt-2 font-display">2. Adesão, Período de Testes e Isenção de Mensalidade</h4>
                 <p>
-                  Ao optar por qualquer um de nossos planos e serviços de assinatura (Plano Básico ou Plano Premium), o contratante tem direito incondicional ao benefício de mensalidade isenta nos primeiros 30 (trinta) dias de uso (mensalidade R$ 0 no primeiro mês). Adicionalmente, o envio do insumo físico (Tag adesiva RFID para-brisa) é inteiramente gratuito, sem nenhum custo extra de frete ou postagem nacional. Caso decida continuar com a tag de passagem automática ativa após os 30 dias grátis, incidirá a mensalidade regular recorrente do plano contratado (R$ 19,99/mês para o Plano Básico e R$ 49,99/mês para o Plano Premium). Não existe taxa contratual de rescisão ou fidelidade de qualquer espécie; o cliente tem a liberdade de cancelar ou desativar o plano sem custos ou multas quando quiser, sendo faturado apenas referente ao saldo ou tarifas oficiais de pedágios que efetivamente tiver consumido/utilizado em suas passagens.
+                  Ao optar por qualquer um de nossos planos e serviços de assinatura (Plano Básico ou Plano Premium), o contratante tem direito incondicional ao benefício de mensalidade isenta nos primeiros 30 (trinta) dias de uso (mensalidade R$ 0 no primeiro mês). Adicionalmente, o envio do insumo físico (Tag adesiva RFID para-brisa) é inteiramente gratuito, sem nenhum custo extra de frete ou postagem nacional. Caso decida continuar com a tag de passagem automática ativa após os 30 dias de isenção, incidirá a mensalidade regular recorrente do plano contratado (R$ 19,99/mês para o Plano Básico e R$ 49,99/mês para o Plano Premium). Não existe taxa contratual de rescisão ou fidelidade de qualquer espécie; o cliente tem a liberdade de cancelar ou desativar o plano sem custos ou multas quando quiser, sendo faturado apenas referente ao saldo ou tarifas regulares de passagem da rede de utilização que efetivamente tiver consumido/utilizado em suas passagens.
                 </p>
 
                 <h4 className="font-bold text-xs sm:text-sm text-brand-blue pt-2 font-display">3. Direitos e Obrigações do Usuário</h4>
                 <p>
-                  O contratante compromete-se a fornecer informações verdadeiras e fidedignas sobre a titularidade e o veículo para-brisa. O uso indevido da tag em veículos não cadastrados ou modificados, bem como a evasão de pedágios por falta de saldo, é de responsabilidade estritamente pessoal e legal do motorista condutor.
+                  O contratante compromete-se a fornecer informações verdadeiras e fidedignas sobre a titularidade e o veículo para-brisa. O uso indevido da tag em veículos não cadastrados ou modificados, bem como quaisquer tarifas pendentes por falta de saldo, é de responsabilidade estritamente pessoal e legal do motorista condutor.
                 </p>
 
                 <h4 className="font-bold text-xs sm:text-sm text-brand-blue pt-2 font-display">4. Modificações e Foro</h4>
@@ -1190,12 +1190,12 @@ export default function App() {
 
                 <h4 className="font-bold text-xs sm:text-sm text-brand-blue pt-2 font-display">1. Dados coletados e sua finalidade</h4>
                 <p>
-                  Coletamos seus dados cadastrais (Nome Completo, CNPJ/CPF, Endereço de Entrega, E-mail, Detalhes do Veículo e Número de WhatsApp) para processar o credenciamento do adesivo RFID, viabilizar a entrega terceirizada expressa domiciliar e permitir o contato de suporte e faturamento transparente.
+                  Coletamos seus dados cadastrais (Nome Completo, CNPJ/CPF, Endereço de Entrega, E-mail, Detalhes do Veículo e Número de WhatsApp) para viabilizar a ativação do adesivo RFID, viabilizar a entrega terceirizada expressa domiciliar e permitir o contato de suporte e faturamento transparente.
                 </p>
 
                 <h4 className="font-bold text-xs sm:text-sm text-brand-blue pt-2 font-display">2. Uso de Cookies e Pixel de Rastreamento de Terceiros</h4>
                 <p>
-                  Utilizamos recursos tecnológicos padrões de internet como Cookies de Navegação, Pixels de Rastreamento do Google Analytics e Google Ads para entender de forma anônima a navegação no site, garantir o bom funcionamento do simulador de pedágios e otimizar campanhas de anúncios digitais em conformidade e respeito aos regulamentos de privacidade do Google.
+                  Utilizamos recursos tecnológicos padrões de internet como Cookies de Navegação, Pixels de Rastreamento do Google Analytics e Google Ads para entender de forma anônima a navegação no site, garantir o bom funcionamento do simulador de economia e otimizar campanhas de anúncios digitais em conformidade e respeito aos regulamentos de privacidade do Google.
                 </p>
 
                 <h4 className="font-bold text-xs sm:text-sm text-brand-blue pt-2 font-display">3. Compartilhamento e Direitos do Titular</h4>
@@ -1290,7 +1290,7 @@ export default function App() {
 
                 <h4 className="font-bold text-xs sm:text-sm text-brand-blue pt-2 font-display">2. Cancelamento Sem Multa Rescisória e Sem Taxas Extras</h4>
                 <p>
-                  Não cobramos tarifas adicionais de fidelização, prazos mínimos de carência obrigatória ou taxas contratuais rescisórias. O cancelamento do seu plano e a desativação da tag em nosso sistema podem ser efetuados a qualquer instante, livre de qualquer ônus financeiro. Você só precisará arcar com as despesas e tarifas das passagens de pedágio que efetivamente realizou durante suas viagens e trânsito rodoviário — não havendo qualquer tipo de cobrança de rescisão ou multas ocultas.
+                  Não cobramos tarifas adicionais de fidelização, prazos mínimos de carência obrigatória ou taxas contratuais rescisórias. O cancelamento do seu plano e a desativação da tag em nosso sistema podem ser efetuados a qualquer instante, livre de qualquer ônus financeiro. Você só precisará arcar com as despesas e tarifas de utilização das passagens que efetivamente realizou durante suas viagens e deslocamentos — não havendo qualquer tipo de cobrança de rescisão ou multas ocultas.
                 </p>
 
                 <h4 className="font-bold text-xs sm:text-sm text-brand-blue pt-2 font-display">3. Como Solicitar o Cancelamento de Forma Imediata?</h4>
@@ -1348,12 +1348,12 @@ export default function App() {
 
                 <h4 className="font-bold text-xs sm:text-sm text-brand-blue pt-2 font-display">2. Natureza Jurídica 100% Independente e Privada</h4>
                 <p className="bg-amber-50 text-amber-900 border border-amber-200 px-4 py-3 rounded-lg font-medium">
-                  <strong>IMPORTANTE:</strong> A Velo Flow é uma empresa privada com capital exclusivamente independente. Esclarecemos de forma explícita e irrevogável que nossa organização <strong>NÃO possui nenhum tipo de vínculo governamental, não representa um órgão público estatal, autarquia de trânsito, ministério ou concessionária de rodovias de nenhuma espécie.</strong> Todos os nossos serviços são prestados de maneira independente, com foco em facilitação comercial eletrônica de meios de pagamento e suporte operacional ao consumidor.
+                  <strong>IMPORTANTE:</strong> A Velo Flow é uma empresa privada com capital exclusivamente independente. Esclarecemos de forma explícita e irrevogável que nossa organização <strong>NÃO possui nenhum tipo de vínculo com o Estado, autarquias de trânsito ou administradoras de eixos viários de nenhuma espécie.</strong> Todos os nossos serviços são prestados de maneira independente, com foco em facilitação comercial eletrônica de meios de pagamento e suporte operacional ao consumidor.
                 </p>
 
                 <h4 className="font-bold text-xs sm:text-sm text-brand-blue pt-2 font-display">3. Nossos Serviços de Tecnologia</h4>
                 <p>
-                  Diferente de órgãos de governança pública ou concessionárias integradas de vias terrestres, a Velo Flow desempenha as seguintes tarefas comerciais:
+                  Diferente de entidades estatais ou administradoras de eixos viários, a Velo Flow desempenha as seguintes tarefas comerciais:
                 </p>
                 <ul className="list-disc pl-5 space-y-2.5">
                   <li><strong>Assessoria e Configuração:</strong> Auxiliamos na identificação e indicação do melhor plano de consumo de passagens para o perfil do interessado;</li>
