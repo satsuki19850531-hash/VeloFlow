@@ -89,7 +89,7 @@ export const TESTIMONIALS: Testimonial[] = [
 export const FAQS: FAQItem[] = [
   {
     question: "Como funciona a tag inteligente da Velo Flow?",
-    answer: "A Velo Flow é um adesivo inteligente com chip RFID que você cola no para-brisa do seu veículo. Ao passar pelas cabines de pedágios automáticos em rodovias ou cancelas de shoppings e estacionamentos parceiros, a antena lê a tag e libera a passagem automaticamente, debitando apenas a tarifa oficial."
+    answer: "A Velo Flow é um adesivo inteligente com chip RFID que você cola no para-brisa do seu veículo. Ao passar pelas cabines de pedágios automáticos em rodovias ou cancelas de shoppings e estacionamentos parceiros, a antena lê a tag e libera a passagem automaticamente, debitando apenas a tarifa regular do pedágio."
   },
   {
     question: "O envio da Tag física para minha casa é realmente grátis?",

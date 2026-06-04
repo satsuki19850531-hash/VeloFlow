@@ -49,6 +49,7 @@ export default function App() {
   const [isPrivacyModalOpen, setIsPrivacyModalOpen] = useState(false);
   const [isSecurityModalOpen, setIsSecurityModalOpen] = useState(false);
   const [isCancellationModalOpen, setIsCancellationModalOpen] = useState(false);
+  const [isAboutModalOpen, setIsAboutModalOpen] = useState(false);
   
   // Interactive coverage modal or custom address search Simulator
   const [coverageSearch, setCoverageSearch] = useState("");
@@ -202,7 +203,7 @@ export default function App() {
                   onClick={() => setMobileMenuOpen(false)}
                   className="py-2 hover:text-brand-orange transition-colors border-b border-white/5 text-sm"
                 >
-                  Cobertura Oficial
+                  Rede de Cobertura
                 </a>
                 <a 
                   href="#faq" 
@@ -398,7 +399,7 @@ export default function App() {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-brand-orange font-bold text-sm leading-none pt-0.5">✓</span>
-                      <span><strong>Passagem Livre e Automática</strong> em 100% das cancelas de pedágios e estacionamentos nacionais credenciados.</span>
+                      <span><strong>Passagem Livre e Automática</strong> em 100% das cancelas de pedágios e estacionamentos nacionais de nossa rede integrada de parceiros conveniados.</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-brand-orange font-bold text-sm leading-none pt-0.5">✓</span>
@@ -497,7 +498,7 @@ export default function App() {
                     Ampla Cobertura Nacional
                   </h3>
                   <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
-                    Nossa tecnologia oficial é aceita em mais de 90% das rodovias estaduais e federais concessionadas brasileiras, além de shoppings e aeroportos parceiros.
+                    Nosso sistema privado de tecnologia é aceito em mais de 90% das rodovias estaduais e federais concessionadas brasileiras, além de shoppings e aeroportos parceiros.
                   </p>
                 </div>
                 <div className="mt-6 pt-4 border-t border-gray-150/45 text-xs text-brand-blue font-semibold flex items-center justify-between">
@@ -683,13 +684,13 @@ export default function App() {
               <div className="lg:col-span-6 space-y-6">
                 <div>
                   <span className="text-brand-orange text-xs font-display font-extrabold uppercase tracking-widest bg-brand-orange/5 px-3.5 py-1.5 rounded-full inline-block">
-                    Abrangência Nacional Oficial
+                    Ampla Rede Integrada e Privada
                   </span>
                   <h2 className="font-display font-black text-3xl md:text-4xl text-brand-blue mt-4">
-                    Mais de 1.200 postos e rodovias credenciadas
+                    Mais de 1.200 pontos e rodovias atendidas
                   </h2>
                   <p className="text-gray-500 text-sm mt-3 leading-relaxed">
-                    Estamos homologados nas maiores concessionárias do território brasileiro, oferecendo passagem livre instantânea nas principais saídas interestaduais metropolitanas.
+                    Nossa tecnologia de leitura é plenamente compatível com as antenas de passagens das maiores concessionárias do território brasileiro, oferecendo passagem livre nas saídas que você utiliza.
                   </p>
                 </div>
 
@@ -990,7 +991,7 @@ export default function App() {
             </a>
 
             <p className="text-xs text-blue-100 leading-relaxed max-w-sm">
-              A <strong>Velo Flow</strong> ({siteConfig.companyName}) é uma tecnologia autorizada e focada em inteligência em mobilidade urbana para facilitar o dia a dia de frotas e motoristas particulares.
+              A <strong>Velo Flow</strong> ({siteConfig.companyName}) é uma plataforma privada de tecnologia e soluções independentes para otimização de mobilidade inteligente nacional.
             </p>
 
             <div className="text-xs text-gray-300 space-y-1.5 font-mono">
@@ -1016,7 +1017,7 @@ export default function App() {
                 <a href="#planos" className="hover:text-brand-orange transition-colors">Planos de Assinatura</a>
               </li>
               <li>
-                <a href="#cobertura" className="hover:text-brand-orange transition-colors">Cobertura Credenciada</a>
+                <a href="#cobertura" className="hover:text-brand-orange transition-colors">Rede de Cobertura</a>
               </li>
               <li>
                 <a href="#faq" className="hover:text-brand-orange transition-colors">Perguntas Frequentes (FAQ)</a>
@@ -1031,7 +1032,7 @@ export default function App() {
             </h4>
             <div className="space-y-3.5 text-xs text-blue-100">
               <p className="text-gray-300 leading-relaxed mb-4">
-                Solicite sua tag inteligente diretamente no WhatsApp oficial de suporte de forma automatizada e sem burocracia.
+                Solicite sua tag inteligente diretamente no WhatsApp de atendimento de forma personalizada e sem burocracia.
               </p>
               <a
                 id="footer-whatsapp-chat-button"
@@ -1077,19 +1078,21 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 border-t border-white/10 flex flex-col gap-6 text-[10px] text-blue-100/60 leading-relaxed">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <p className="text-justify">
-              <strong>Isenção de Responsabilidade e Licenciamento:</strong> A VELO FLOW ({siteConfig.companyName}) é uma marca e plataforma privada focada em intermediação de serviços de tecnologia, meios de pagamento eletrônico e facilidade logística para entrega de tags de identificação por radiofrequência (RFID) para-brisa. Não possuímos representação de caráter oficial, estatal, de autarquia ou de concessionária pública de rodovias de forma oficial autônoma. Atuamos estritamente como integrador credenciado de meios de pagamento eletrônico de pedágios e estacionamentos sob a regulamentação do Banco Central do Brasil.
+              <strong>Isenção de Responsabilidade e Licenciamento:</strong> A VELO FLOW ({siteConfig.companyName}) é uma marca e plataforma privada focada em intermediação de serviços de tecnologia, meios de pagamento eletrônico e facilidade logística para entrega de fita de identificação por radiofrequência (RFID) para-brisa. Não possuímos representação de caráter oficial, estatal, de autarquia ou de concessionária pública de rodovias. A Velo Flow é uma empresa privada e independente. Não somos órgão governamental, concessionária de rodovia, entidade pública ou representante oficial de qualquer órgão público ou concessionária. Todos os serviços são oferecidos de forma independente.
             </p>
             <p className="text-justify">
-              <strong>Transparência de Ofertas, Envio e Cancelamento Sem Multas:</strong> O benefício de adesão com mensalidade isenta nos primeiros 30 (trinta) dias de teste (mensalidade grátis no primeiro mês) aplica-se de forma idêntica e sem restrições a todos os nossos planos e serviços de tag individual (Plano Básico e Plano Premium). O envio postal físico da Tag RFID adesivo de para-brisa para sua residência é 100% gratuito para todo o território nacional, livre de taxas adicionais de postagem ou frete. Não existe fidelidade contratual, termo de carência mínima obrigatória ou qualquer outra multa/taxa oculta para solicitação de cancelamento. O usuário tem autonomia e liberdade plena para cancelar ou desativar o plano a qualquer momento sem pagar nenhuma multa ou taxa rescisória — devendo unicamente arcar com o saldo ou tarifas oficiais de pedágios que de fato utilizar em trânsito. O cancelamento pode ser concluído imediatamente por WhatsApp pelo número a qualquer instante: <strong>(42) 99920-2204</strong> ou pelo e-mail oficial: <strong>contato.veloflow@gmail.com</strong>.
+              <strong>Transparência de Ofertas, Envio e Cancelamento Sem Multas:</strong> O benefício de adesão com mensalidade isenta nos primeiros 30 (trinta) dias de teste (mensalidade grátis no primeiro mês) aplica-se de forma idêntica e sem restrições a todos os nossos planos e serviços de tag individual (Plano Básico e Plano Premium). O envio postal físico da Tag RFID adesivo de para-brisa para sua residência é 100% gratuito para todo o território nacional, livre de taxas adicionais de postagem ou frete. Não existe fidelidade contratual, termo de carência mínima obrigatória ou qualquer outra multa/taxa oculta para solicitação de cancelamento. O usuário tem autonomia e liberdade plena para cancelar ou desativar o plano a qualquer momento sem pagar nenhuma multa ou taxa rescisória — devendo unicamente arcar com o saldo ou tarifas oficiais de pedágios que de fato utilizar em trânsito. O cancelamento pode ser concluído imediatamente por WhatsApp pelo número a qualquer instante: <strong>(42) 99920-2204</strong> ou pelo e-mail de suporte: <strong>contato.veloflow@gmail.com</strong>.
             </p>
           </div>
           
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-4 border-t border-white/5 text-[9px] text-blue-100/50">
             <p className="text-center sm:text-left">
               © 2026 {siteConfig.companyName}. Todos os direitos reservados. CNPJ {siteConfig.cnpj}.<br />
-              Endereço: {siteConfig.address}. E-mail Oficial: {siteConfig.email}. Telefone: {siteConfig.phoneDisplay}.
+              Endereço: {siteConfig.address}. E-mail de Contato: {siteConfig.email}. Telefone: {siteConfig.phoneDisplay}.
             </p>
             <div className="flex flex-wrap gap-x-4 gap-y-2 justify-center sm:justify-end text-blue-100/80">
+              <button onClick={() => setIsAboutModalOpen(true)} className="hover:text-brand-orange hover:underline transition-colors cursor-pointer bg-transparent border-0 p-0 font-medium">Sobre a Empresa</button>
+              <span>•</span>
               <button onClick={() => setIsTermsModalOpen(true)} className="hover:text-brand-orange hover:underline transition-colors cursor-pointer bg-transparent border-0 p-0 font-medium">Termos de Uso</button>
               <span>•</span>
               <button onClick={() => setIsPrivacyModalOpen(true)} className="hover:text-brand-orange hover:underline transition-colors cursor-pointer bg-transparent border-0 p-0 font-medium">Política de Privacidade</button>
@@ -1132,7 +1135,7 @@ export default function App() {
                 
                 <h4 className="font-bold text-xs sm:text-sm text-brand-blue pt-2 font-display">1. Objeto e Natureza dos Serviços</h4>
                 <p>
-                  A Velo Flow atua exclusivamente como desenvolvedora independente de soluções logísticas e intermediadora eletrônica de facilitadores de pagamento e entrega expressa de adesivos identificadores com tecnologia RFID. <strong>Esclarecemos expressamente que a Velo Flow não substitui, não possui, não representa de caráter oficial, estatal, de autarquia municipal, estadual ou nacional, ou de concessionárias rodoviárias públicas.</strong> Centralizamos e integramos a aquisição, o suporte, a postagem, o credenciamento em redes homologadas de meios de pagamento e o atendimento ao cliente para que ele usufrua de passagens automáticas em cancelas conveniadas.
+                  A Velo Flow atua exclusivamente como desenvolvedora independente de soluções logísticas e intermediadora eletrônica de facilitadores de pagamento e entrega de fita de identificação eletrônica com tecnologia RFID. <strong>Esclarecemos expressamente que a Velo Flow não substitui, não possui, não representa caráter oficial, estatal, de autarquia municipal, estadual ou nacional, ou de concessionárias rodoviárias públicas.</strong> Centralizamos e integramos a aquisição, o suporte, a postagem e o atendimento ao cliente para que ele usufrua de passagens automáticas em cancelas conveniadas.
                 </p>
 
                 <h4 className="font-bold text-xs sm:text-sm text-brand-blue pt-2 font-display">2. Adesão, Período de Testes e Isenção de Mensalidade</h4>
@@ -1192,12 +1195,12 @@ export default function App() {
 
                 <h4 className="font-bold text-xs sm:text-sm text-brand-blue pt-2 font-display">2. Uso de Cookies e Pixel de Rastreamento de Terceiros</h4>
                 <p>
-                  Utilizamos recursos tecnológicos padrões de internet como Cookies de Navegação, Pixels Oficiais de Rastreamento do Google Analytics e Google Ads para entender de forma anônima a navegação no site, garantir o bom funcionamento do simulador de pedágios e otimizar campanhas de anúncios digitais em conformidade e respeito aos regulamentos de privacidade do Google.
+                  Utilizamos recursos tecnológicos padrões de internet como Cookies de Navegação, Pixels de Rastreamento do Google Analytics e Google Ads para entender de forma anônima a navegação no site, garantir o bom funcionamento do simulador de pedágios e otimizar campanhas de anúncios digitais em conformidade e respeito aos regulamentos de privacidade do Google.
                 </p>
 
                 <h4 className="font-bold text-xs sm:text-sm text-brand-blue pt-2 font-display">3. Compartilhamento e Direitos do Titular</h4>
                 <p>
-                  Seus dados pessoais não serão de nenhuma forma vendidos ou alugados para terceiros. O compartilhamento ocorre única e exclusivamente com os operadores logísticos de postagem física dos Correios ou transportadora credenciada e os sistemas homologados de processamento de cobrança eletrônica parceiros. Você possui direito a qualquer momento de solicitar a retificação, exclusão, correção e portabilidade gratuita de seus dados sob guarda corporativa diretamente pelo nosso canal de DPO no e-mail: <strong>{siteConfig.email}</strong>.
+                  Seus dados pessoais não serão de nenhuma forma vendidos ou alugados para terceiros. O compartilhamento ocorre única e exclusivamente com os operadores logísticos de postagem física dos Correios ou transportadora parceira e os sistemas de processamento de cobrança eletrônica parceiros. Você possui direito a qualquer momento de solicitar a retificação, exclusão, correção e portabilidade gratuita de seus dados sob guarda corporativa diretamente pelo nosso canal de DPO no e-mail: <strong>{siteConfig.email}</strong>.
                 </p>
               </div>
               <div className="bg-gray-50 border-t px-6 py-4 flex justify-end">
@@ -1305,6 +1308,66 @@ export default function App() {
                   Solicitar pelo WhatsApp
                 </a>
                 <button onClick={() => setIsCancellationModalOpen(false)} className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-display font-medium text-xs px-5 py-2.5 rounded-lg transition-colors cursor-pointer">
+                  Fechar Janela
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+
+        {/* Sobre a Empresa Modal */}
+        {isAboutModalOpen && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+          >
+            <motion.div 
+              initial={{ scale: 0.95, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.95, y: 20 }}
+              className="bg-white text-gray-800 rounded-2xl w-full max-w-2xl max-h-[85vh] flex flex-col overflow-hidden shadow-2xl relative border border-gray-100"
+            >
+              <div className="bg-brand-blue text-white px-6 py-4 flex items-center justify-between border-b">
+                <h3 className="font-display font-black text-xs sm:text-sm uppercase tracking-wider text-brand-orange">Sobre Nós - Velo Flow</h3>
+                <button onClick={() => setIsAboutModalOpen(false)} className="text-white hover:text-brand-orange transition-colors p-1 rounded-full hover:bg-white/10 cursor-pointer">
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+              <div className="p-6 overflow-y-auto space-y-4 text-xs leading-relaxed text-gray-700 font-sans">
+                <p className="font-bold text-brand-blue">Última atualização: Junho de 2026</p>
+                <p>
+                  A <strong>Velo Flow</strong> é uma plataforma digital privada pertencente e operada sob a responsabilidade de <strong>{siteConfig.companyName}</strong>, sob o CNPJ de inscrição cadastral <strong>{siteConfig.cnpj}</strong>, com endereço registrado em <strong>{siteConfig.address}</strong>.
+                </p>
+                
+                <h4 className="font-bold text-xs sm:text-sm text-brand-blue pt-2 font-display">1. Quem Somos e Nosso Propósito</h4>
+                <p>
+                  Surgimos com o firme propósito de desburocratizar a mobilidade diária de motoristas de frotas e particulares em todo o território nacional. Desenvolvemos soluções privadas de tecnologia que facilitam e otimizam a aquisição, a recepção e a utilização de adesivos inteligentes de identificação por radiofrequência (RFID) para-brisa. Atuamos como intermediários logísticos e facilitadores de atendimento especializado, garantindo suporte humanizado continuo para desobstruir processos de viagem.
+                </p>
+
+                <h4 className="font-bold text-xs sm:text-sm text-brand-blue pt-2 font-display">2. Natureza Jurídica 100% Independente e Privada</h4>
+                <p className="bg-amber-50 text-amber-900 border border-amber-200 px-4 py-3 rounded-lg font-medium">
+                  <strong>IMPORTANTE:</strong> A Velo Flow é uma empresa privada com capital exclusivamente independente. Esclarecemos de forma explícita e irrevogável que nossa organização <strong>NÃO possui nenhum tipo de vínculo governamental, não representa um órgão público estatal, autarquia de trânsito, ministério ou concessionária de rodovias de nenhuma espécie.</strong> Todos os nossos serviços são prestados de maneira independente, com foco em facilitação comercial eletrônica de meios de pagamento e suporte operacional ao consumidor.
+                </p>
+
+                <h4 className="font-bold text-xs sm:text-sm text-brand-blue pt-2 font-display">3. Nossos Serviços de Tecnologia</h4>
+                <p>
+                  Diferente de órgãos de governança pública ou concessionárias integradas de vias terrestres, a Velo Flow desempenha as seguintes tarefas comerciais:
+                </p>
+                <ul className="list-disc pl-5 space-y-2.5">
+                  <li><strong>Assessoria e Configuração:</strong> Auxiliamos na identificação e indicação do melhor plano de consumo de passagens para o perfil do interessado;</li>
+                  <li><strong>Envio Postal Expresso Garantido:</strong> Providenciamos a postagem física imediata da tag adesiva RFID direto ao endereço que você definir em cadastro comercial, sem repasse de cobranças de frete;</li>
+                  <li><strong>Central de Atendimento e Suporte Humanizado:</strong> Prestamos atendimento unificado pelo WhatsApp ou e-mail de contato para sanar dúvidas, detalhar extratos de trânsito e processar requisições transparentes de cancelamento.</li>
+                </ul>
+
+                <h4 className="font-bold text-xs sm:text-sm text-brand-blue pt-2 font-display">4. Canais de Comunicação Comercial</h4>
+                <p>
+                  Qualquer cidadão ou empresa pode obter atendimento direto, esclarecimento de dúvidas pontuais ou cancelamento sem multas falando com nosso suporte pessoal através do e-mail <strong>{siteConfig.email}</strong> ou pelo WhatsApp <strong>{siteConfig.phoneDisplay}</strong>, com resposta rápida e descompromissada.
+                </p>
+              </div>
+              <div className="bg-gray-50 border-t px-6 py-4 flex justify-end">
+                <button onClick={() => setIsAboutModalOpen(false)} className="bg-brand-blue hover:bg-opacity-95 text-white font-display font-bold text-xs px-5 py-2.5 rounded-lg transition-colors cursor-pointer">
                   Fechar Janela
                 </button>
               </div>
