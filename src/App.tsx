@@ -116,9 +116,6 @@ export default function App() {
                 <span className="font-display font-black text-2xl text-white tracking-tight">VELO</span>
                 <span className="font-display font-black text-2xl text-brand-orange tracking-tight">FLOW</span>
               </div>
-              <p className="text-[9px] text-brand-orange/80 font-display font-bold uppercase tracking-widest mt-0.5">
-                SEU TRANSPORTE
-              </p>
             </div>
           </a>
 
@@ -264,7 +261,7 @@ export default function App() {
                 {/* Micro Pill */}
                 <span className="inline-flex items-center gap-2 bg-brand-light/10 text-brand-light border border-white/15 px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider">
                   <Award className="w-3.5 h-3.5 text-brand-orange fill-brand-orange" />
-                  Alternativa Inteligente e Sem Burocracia à Veloe
+                  Tecnologia Inteligente e Sem Burocracia para Estradas
                 </span>
 
                 <h1 className="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl text-white leading-tight tracking-tight">
@@ -989,9 +986,6 @@ export default function App() {
                   <span className="font-display font-black text-xl text-white tracking-tight">VELO</span>
                   <span className="font-display font-black text-xl text-brand-orange tracking-tight">FLOW</span>
                 </div>
-                <p className="text-[10px] text-brand-orange/80 font-display font-bold uppercase tracking-widest mt-0.5">
-                  SEU TRANSPORTE
-                </p>
               </div>
             </a>
 
