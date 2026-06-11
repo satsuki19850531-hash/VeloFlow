@@ -101,7 +101,7 @@ export const FAQS: FAQItem[] = [
   },
   {
     question: "Como funciona o cancelamento? Pago alguma taxa ou multa?",
-    answer: "O cancelamento é 100% livre, desburocratizado e sem custos extras. Você pode solicitar a desativação do adesivo a qualquer momento pelo suporte via WhatsApp (42) 99920-2204 ou e-mail contato.veloflow@gmail.com. Não há multas de fidelidade, prazos de permanência mínima ou termos de carência. Você paga apenas as taxas convencionais de passagens que efetivamente utilizou em seus deslocamentos e nada mais."
+    answer: "O cancelamento é 100% livre, desburocratizado e sem custos extras. Você pode solicitar a desativação do adesivo a qualquer momento pelo suporte via WhatsApp +55 21 97967-4070 ou e-mail contato.veloflow@gmail.com. Não há multas de fidelidade, prazos de permanência mínima ou termos de carência. Você paga apenas as taxas convencionais de passagens que efetivamente utilizou em seus deslocamentos e nada mais."
   },
   {
     question: "Quais são as formas de pagamento aceitas?",

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Shield,
   Clock,
@@ -28,6 +28,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { SiteConfig } from "./types";
 import { PLANS, TESTIMONIALS, FAQS, COVERAGE_REGIONS } from "./data";
 import SavingsCalculator from "./components/SavingsCalculator";
+import CentralPage from "./components/CentralPage";
 
 export default function App() {
   // Config state initialized with default VANDERLEY ANTONIO DA SILVA / SEU TRANSPORTE details
@@ -36,13 +37,30 @@ export default function App() {
     cnpj: "06.912.488/0001-00",
     address: "R MANOEL ANTONIO DE LIMA, 755 - CHACARA SAO DOMINGOS SHOP, MOCOCA - SP, CEP 13.734-445",
     email: "contato.veloflow@gmail.com",
-    phoneDisplay: "(42) 99920-2204",
-    whatsAppNumber: "5542999202204"
+    phoneDisplay: "+55 21 97967-4070",
+    whatsAppNumber: "5521979674070"
   });
 
   const [activeCoverageIndex, setActiveCoverageIndex] = useState(0);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  // Path routing detection
+  const [currentPath, setCurrentPath] = useState(window.location.pathname);
+
+  useEffect(() => {
+    const handleLocationChange = () => {
+      if (window.location.pathname !== currentPath) {
+        setCurrentPath(window.location.pathname);
+      }
+    };
+    window.addEventListener("popstate", handleLocationChange);
+    const interval = setInterval(handleLocationChange, 350);
+    return () => {
+      window.removeEventListener("popstate", handleLocationChange);
+      clearInterval(interval);
+    };
+  }, [currentPath]);
 
   // Google Ads compliance modal states
   const [isTermsModalOpen, setIsTermsModalOpen] = useState(false);
@@ -80,6 +98,10 @@ export default function App() {
   };
 
   const defaultHeroCta = "Olá! Gostaria de falar com um especialista sobre a adesão da Tag Inteligente Velo Flow.";
+
+  if (currentPath === "/central" || currentPath === "/central/") {
+    return <CentralPage config={siteConfig} />;
+  }
 
   return (
     <div className="bg-brand-slate min-h-screen text-brand-dark flex flex-col relative overflow-x-hidden font-sans">
@@ -1081,7 +1103,7 @@ export default function App() {
               <strong>Isenção de Responsabilidade e Licenciamento:</strong> A Velo Flow é uma empresa privada e independente. Não possui vínculo com órgãos públicos, entidades governamentais ou concessionárias. Todas as marcas eventualmente mencionadas pertencem aos seus respectivos proprietários. Todos os serviços são oferecidos de forma independente.
             </p>
             <p className="text-justify">
-              <strong>Transparência de Ofertas, Envio e Cancelamento Sem Multas:</strong> O benefício de adesão com mensalidade isenta nos primeiros 30 (trinta) dias de teste (mensalidade grátis no primeiro mês) aplica-se de forma idêntica e sem restrições a todos os nossos planos e serviços de tag individual (Plano Básico e Plano Premium). O envio postal físico do adesivo inteligente de para-brisa para sua residência é 100% gratuito para todo o território nacional, livre de taxas adicionais de postagem ou frete. Não existe fidelidade contratual, termo de carência mínima obrigatória ou qualquer outra multa/taxa para solicitação de cancelamento. O usuário tem autonomia e liberdade plena para cancelar ou desativar o plano a qualquer momento sem pagar nenhuma multa ou taxa rescisória — devendo unicamente arcar com o saldo ou tarifas regulares de passagem da rede de utilização que de fato consumir. O cancelamento pode ser concluído imediatamente por WhatsApp pelo número a qualquer instante: <strong>(42) 99920-2204</strong> ou pelo e-mail de suporte: <strong>contato.veloflow@gmail.com</strong>.
+              <strong>Transparência de Ofertas, Envio e Cancelamento Sem Multas:</strong> O benefício de adesão com mensalidade isenta nos primeiros 30 (trinta) dias de teste (mensalidade grátis no primeiro mês) aplica-se de forma idêntica e sem restrições a todos os nossos planos e serviços de tag individual (Plano Básico e Plano Premium). O envio postal físico do adesivo inteligente de para-brisa para sua residência é 100% gratuito para todo o território nacional, livre de taxas adicionais de postagem ou frete. Não existe fidelidade contratual, termo de carência mínima obrigatória ou qualquer outra multa/taxa para solicitação de cancelamento. O usuário tem autonomia e liberdade plena para cancelar ou desativar o plano a qualquer momento sem pagar nenhuma multa ou taxa rescisória — devendo unicamente arcar com o saldo ou tarifas regulares de passagem da rede de utilização que de fato consumir. O cancelamento pode ser concluído imediatamente por WhatsApp pelo número a qualquer instante: <strong>+55 21 97967-4070</strong> ou pelo e-mail de suporte: <strong>contato.veloflow@gmail.com</strong>.
             </p>
           </div>
           
@@ -1295,7 +1317,7 @@ export default function App() {
 
                 <h4 className="font-bold text-xs sm:text-sm text-brand-blue pt-2 font-display">3. Como Solicitar o Cancelamento de Forma Imediata?</h4>
                 <p>
-                  Para cancelar, basta encaminhar uma mensagem simples para o suporte técnico operacional via WhatsApp no número <strong>(42) 99920-2204</strong> ou enviar um e-mail com a placa do veículo cadastrado para <strong>contato.veloflow@gmail.com</strong>. Nossa equipe de faturamento efetivará em sistema a desativação da tag e do plano dentro do expediente corporativo no prazo regulamentar máximo de 24 horas úteis, sem burocracias ou contrapropostas invasivas.
+                  Para cancelar, basta encaminhar uma mensagem simples para o suporte técnico operacional via WhatsApp no número <strong>+55 21 97967-4070</strong> ou enviar um e-mail com a placa do veículo cadastrado para <strong>contato.veloflow@gmail.com</strong>. Nossa equipe de faturamento efetivará em sistema a desativação da tag e do plano dentro do expediente corporativo no prazo regulamentar máximo de 24 horas úteis, sem burocracias ou contrapropostas invasivas.
                 </p>
               </div>
               <div className="bg-gray-50 border-t px-6 py-4 flex justify-end gap-3 font-medium">
